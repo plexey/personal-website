@@ -1,18 +1,23 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import baseStyles from '../baseStyles';
 import Header from './Header';
-import NavLink from '../components/NavLink';
+import Content from './Content';
+
+const theme = {
+  font: `'Oxygen', sans-serif`,
+}
 
 export default class App extends React.Component {
   render() {
+    baseStyles()
     return (
-      <div>
-        <Header>
-          <NavLink>Home</NavLink>
-          <NavLink>Portfolio</NavLink>
-          <NavLink>About</NavLink>
-        </Header>
-      </div>
+        <ThemeProvider theme={theme}>
+          <div>
+            <Header />
+            <Content />
+          </div>
+        </ThemeProvider>
     );
   }
 }
