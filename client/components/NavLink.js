@@ -1,14 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-// Define our button, but with the use of props.theme this time
-const NavLink = styled.a`
+const activeClassName = 'active-link'
+
+const Link = styled(NavLink).attrs({
+  activeClassName
+}) `
+  display: flex;
+  align-items: center;
+  color: hsl(220, 63%, 75%);
   font-size: 17px;
-  color: red;
-  padding: 8px 10px 8px 10px;
-  margin: 5px;
-  border: 2px solid red;
-  border-color: red;
-`;
+  text-decoration: none;
+  background: hsl(220, 16%, 22%);
+  height: 100%;
+  padding: 0 15px 0 15px;
+  font-family: ${props => props.theme.font};
+  font-weight: bold;
+  transition: 200ms ease all; 
 
-export default NavLink;
+  &.${activeClassName} {
+    color: hsl(220, 16%, 22%);
+    background: hsl(205, 100%, 65%);
+  }
+`
+
+// Link.defaultProps = {
+//   theme: {
+//     main: 'blue'
+//   }
+// }
+
+export default Link;
