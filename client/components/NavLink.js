@@ -9,10 +9,10 @@ const Link = styled(NavLink).attrs({
 }) `
   display: flex;
   align-items: center;
-  color: hsl(220, 63%, 75%);
+  color: hsl(0, 0%, 10%);
   font-size: 17px;
   text-decoration: none;
-  background: hsl(220, 16%, 22%);
+  background: none;
   height: 100%;
   padding: 0 15px 0 15px;
   font-family: ${props => props.theme.font};
@@ -20,15 +20,9 @@ const Link = styled(NavLink).attrs({
   transition: 200ms ease all; 
 
   &.${activeClassName} {
-    color: hsl(220, 16%, 22%);
-    background: hsl(205, 100%, 65%);
+    color: ${props => props.theme.brandColor};
+    background: hsl(0, 0%, 20%);
   }
 `
-
-// Link.defaultProps = {
-//   theme: {
-//     main: 'blue'
-//   }
-// }
 
 export default Link;
