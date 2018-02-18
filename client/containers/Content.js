@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
+import Home from './Home';
 import Projects from "./Projects";
 
 const Wrapper = styled.div`
@@ -18,7 +19,6 @@ const Wrapper = styled.div`
   }
 `;
 
-const Home = () => <h3>Home sdflkasjdf lkjadf lkjadlk jaslkdj lk</h3>;
 const Contact = () => <h3>Contact</h3>;
 
 class Content extends Component {
