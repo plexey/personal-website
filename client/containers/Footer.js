@@ -36,7 +36,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
-        <Heading>Copyright &copy; 2018 - Thomas Trinca</Heading>
+        <Heading>Copyright &copy; 2018 Thomas Trinca - Melbourne based Web Developer</Heading>
       </FooterContent>
     </FooterContainer>
   );
