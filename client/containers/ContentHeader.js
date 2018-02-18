@@ -9,15 +9,15 @@ const Wrapper = styled.div`
   grid-row-start: main2;
   grid-row-end: main3;
   /* Define internal grid  columns */
-  grid-template-columns: [ch-col-1] 50px [ch-col-2] auto [ch-col-3] 50px [ch-col-4];
+  grid-template-columns: ${props => props.theme.mainGridTemplateColums};
   background: hsl(0, 0%, 20%);
   font-family: ${props => props.theme.font};
 `;
 
 const Content = styled.div`
   display: grid;
-  grid-column-start: ch-col-2;
-  grid-column-end: ch-col-3;
+  grid-column-start: cline-2;
+  grid-column-end: cline-3;
   /* Define internal grid rows */
   grid-template-rows: 
     [ch-row-1] 
@@ -64,6 +64,7 @@ const NavLinks = styled.nav`
 const Link = styled.a`
   padding: 0 20px 0 0;
   color: ${props => props.theme.brandColor};
+  font-size: 18px;
 `
 
 const ProjectContentHeader = (props) => {
