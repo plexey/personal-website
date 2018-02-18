@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-row-start: main3;
   grid-row-end: main4;
-  grid-template-columns: [content1] 50px [content2] auto [content3] 50px [content4];
+  grid-template-columns: ${props => props.theme.mainGridTemplateColums};
   min-height: 100vh;
   background: hsl(0, 0%, 90%);
 `;
