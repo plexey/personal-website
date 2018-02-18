@@ -21,8 +21,7 @@ const content = {
     heading: "Palette Town",
     subheading:
       "A sophisticated color palette generation utility for designers & developers",
-    description:
-      "A sophisticated color palette generator and manipulation utility. Palette Town allows you to generate an infinite variety of color palettes from selected color harmonies and modifiers. Reorder color palettes arbitrarily by dragging and dropping swatches. Add and remove individual swatches from your palette or modify swatches color values in your preferred color space.",
+    description: `A sophisticated color palette generator and manipulation utility. Palette Town allows you to generate an infinite variety of color palettes from selected color harmonies and modifiers.Reorder color palettes arbitrarily by dragging and dropping swatches. Add and remove individual swatches from your palette or modify swatches color values in your preferred color space.`,
     image: "https://i.imgur.com/gD4pERM.png",
     features: ["feature one", "feature two", "feature three", "feature four"],
     technologies: [
@@ -152,7 +151,7 @@ const content = {
     subheading: "My own personal website",
     description:
       "This is the project write-up for the website you're using it right now! This website was built with React and features an extremely minimal webpack configuration. The application source code utilises styled-components, an implementation of CSS in JS, and thus contains no CSS files at all!",
-    image: "IMAGE_LINK",
+    image: "https://i.imgur.com/liTvhh1.png",
     features: ["FEATURE_NAME", "FEATURE_NAME"],
     technologies: [
       {
