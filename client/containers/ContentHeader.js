@@ -96,7 +96,7 @@ const ContentHeader = () => (
     <Route exact path="/" render={() => (
       <Content>
         <Heading>Home</Heading>
-        <Subheading>Home section</Subheading>
+        <Subheading>Some info about me</Subheading>
       </Content>
     )} />
 
