@@ -7,12 +7,23 @@ import content from '../content';
 import { Route } from 'react-router'
 
 const HeaderContainer = styled.header`
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
   display: grid;
-  grid-row-start: main1;
-  grid-row-end: main2;
   /* Define internal grid columns */
-  grid-template-columns: ${props => props.theme.mainGridTemplateColums};
+  grid-template-columns: ${props => props.theme.deskGridTempCol};
   background: ${props => props.theme.brandColor};
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-color: hsl(0, 0%, 20%);
+
+  @media screen and (max-width: 1000px) {
+    ${HeaderContainer} {
+      grid-template-columns: ${props => props.theme.phoneGridTempCol};
+    }
+  }
 `;
 
 const HeaderContent = styled.div`

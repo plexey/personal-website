@@ -9,9 +9,15 @@ const Wrapper = styled.div`
   grid-row-start: main2;
   grid-row-end: main3;
   /* Define internal grid  columns */
-  grid-template-columns: ${props => props.theme.mainGridTemplateColums};
+  grid-template-columns: ${props => props.theme.deskGridTempCol};
   background: hsl(0, 0%, 20%);
   font-family: ${props => props.theme.font};
+
+  @media screen and (max-width: 1000px) {
+    ${Wrapper} {
+      grid-template-columns: ${props => props.theme.phoneGridTempCol};
+    }
+  }
 `;
 
 const Content = styled.div`
