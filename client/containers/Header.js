@@ -11,13 +11,13 @@ const HeaderContainer = styled.header`
   grid-row-start: main1;
   grid-row-end: main2;
   /* Define internal grid columns */
-  grid-template-columns: [head1] 50px [head2] auto [head3] 50px [head4];
+  grid-template-columns: ${props => props.theme.mainGridTemplateColums};
   background: ${props => props.theme.brandColor};
 `;
 
 const HeaderContent = styled.div`
-  grid-column-start: head2;
-  grid-column-end: head3;
+  grid-column-start: cline-2;
+  grid-column-end: cline-3;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -59,15 +59,8 @@ export default class Header extends React.Component {
           <Heading>Tom Trinca</Heading>
           <NavLinks>
             <NavLink exact to="/">Home</NavLink>
-
-            {/* <NavLink to="/projects">Projects</NavLink> */}
-            {/* <Route exact path="/projects/:project" component={Item} /> */}
-            {/* <DropDown title={"Projects"} listItems={content} /> */}
-
             <DropDown title={"Projects"} listItems={content} />
-
             <NavLink to="/contact">Contact</NavLink>
-
           </NavLinks>
           <ExternalLinks>
             <ExternalLink href="https://github.com/plexey">
