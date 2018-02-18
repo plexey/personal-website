@@ -60,13 +60,14 @@ const Button = styled.button`
   border: none; 
   outline: none;
   cursor: pointer;
+  white-space: nowrap;
 `;
 
-const ConditionalButton = ({ routeProps, action }) => {
+const ConditionalButton = ({ routeProps, action, active }) => {
   const pathname = routeProps.location.pathname;
   const categoryActive = pathname.split('/').includes('projects');
   return (
-    <Button active={categoryActive} onClick={action}>
+    <Button active={categoryActive || active} onClick={action}>
       Projects {'\u00A0'}<i className="fas fa-angle-down"></i>
     </Button>
   )
@@ -96,7 +97,7 @@ class DropDown extends React.Component {
     return (
       <Wrapper>
         <Route path="/" render={(routeProps) => (
-          <ConditionalButton routeProps={routeProps} action={this.toggleVisible} />
+          <ConditionalButton routeProps={routeProps} action={this.toggleVisible} active={visible} />
         )} />
         <OutsideAlerter showSideNav={visible} toggleSideNav={this.toggleVisible}>
           {visible && <List>
