@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Route, NavLink } from 'react-router-dom';
+import OutsideAlerter from './ClickOutside';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -23,7 +24,7 @@ const activeClassName = 'active-link'
 
 const ListItem = styled(NavLink).attrs({
   activeClassName
-})`
+}) `
   display: flex;
   align-items: center;
   color: hsl(0, 0%, 10%);
@@ -58,7 +59,18 @@ const Button = styled.button`
   transition: 100ms ease all; 
   border: none; 
   outline: none;
+  cursor: pointer;
 `;
+
+const ConditionalButton = ({ routeProps, action }) => {
+  const pathname = routeProps.location.pathname;
+  const categoryActive = pathname.split('/').includes('projects');
+  return (
+    <Button active={categoryActive} onClick={action}>
+      Projects {'\u00A0'}<i className="fas fa-angle-down"></i>
+    </Button>
+  )
+}
 
 
 class DropDown extends React.Component {
@@ -83,19 +95,21 @@ class DropDown extends React.Component {
     const keys = Object.keys(listItems)
     return (
       <Wrapper>
-        <Button active={visible} onClick={this.toggleVisible}>
-          {title}{'\u00A0'}<i className="fas fa-angle-down"></i>
-        </Button>
-        {visible && <List>
-          {values.map((item, index) =>
-            <ListItem
-              onClick={this.toggleVisible}
-              to={`/projects/${keys[index]}`}
-              key={index}>
-              {item.heading}
-            </ListItem>
-          )}
-        </List>}
+        <Route path="/" render={(routeProps) => (
+          <ConditionalButton routeProps={routeProps} action={this.toggleVisible} />
+        )} />
+        <OutsideAlerter showSideNav={visible} toggleSideNav={this.toggleVisible}>
+          {visible && <List>
+            {values.map((item, index) =>
+              <ListItem
+                onClick={this.toggleVisible}
+                to={`/projects/${keys[index]}`}
+                key={index}>
+                {item.heading}
+              </ListItem>
+            )}
+          </List>}
+        </OutsideAlerter>
       </Wrapper>
     );
   }
