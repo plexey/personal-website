@@ -60,6 +60,11 @@ const Button = styled.button`
   outline: none;
   cursor: pointer;
   white-space: nowrap;
+
+  ${Button}:hover {
+    color: ${props => props.theme.brandColor};
+    background: hsl(0, 0%, 20%);
+  }
 `;
 
 const ConditionalButton = ({ routeProps, action, active }) => {
