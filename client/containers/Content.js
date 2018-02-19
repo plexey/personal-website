@@ -11,6 +11,13 @@ const Wrapper = styled.div`
   grid-template-columns: ${props => props.theme.deskGridTempCol};
   min-height: 100vh;
   background: hsl(0, 0%, 90%);
+  transition: 200ms ease all;
+
+  @media screen and (max-width: 1300px) {
+    ${Wrapper} {
+      grid-template-columns: ${props => props.theme.tabGridTempCol};
+    }
+  }
 
   @media screen and (max-width: 1000px) {
     ${Wrapper} {
