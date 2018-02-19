@@ -10,8 +10,9 @@ const theme = {
   brandColor: 'hsl(170, 100%, 60%)',
   headingFont: `'Walter Turncoat', cursive`,
   font: `'Oxygen', sans-serif`,
-  deskGridTempCol: '[cline-1] 15% [cline-2] auto [cline-3] 15% [cline-4]',
-  phoneGridTempCol: '[cline-1] 10px [cline-2] auto [cline-3] 10px [cline-4]'
+  deskGridTempCol: '[cline-1] 20% [cline-2] auto [cline-3] 20% [cline-4]',
+  tabGridTempCol: '[cline-1] 10% [cline-2] auto [cline-3] 10% [cline-4]',
+  phoneGridTempCol: '[cline-1] 20px [cline-2] auto [cline-3] 20px [cline-4]'
 }
 
 const Main = styled.div`
