@@ -3,24 +3,13 @@ import styled from 'styled-components';
 import content from '../content';
 import Section from '../components/Section';
 import Paragraph from '../components/Paragraph';
+import SectionHeading from '../components/SectionHeading';
 
 const Wrapper = styled.div`
   grid-column-start: cline-2;
   grid-column-end: cline-3;
   font-family: ${props => props.theme.font};
   padding: 0 0 60px 0;
-`;
-
-const Heading = styled.h1`
-  font-size: 27px;
-  padding: 0 0 10px 0;
-  margin: 0 0 15px 0;
-  font-weight: bold;
-  width: 100%;
-  border-style: solid;
-  border-width: 0 0 1px 0;
-  border-color: hsla(0, 0%, 0%, .15);
-  color: hsl(0, 0%, 15%);
 `;
 
 const ListItems = styled.ul`
@@ -42,7 +31,6 @@ const Image = styled.img`
   width: 70%;
   min-width: 800px;
   max-width: 1000px;
-  /* box-shadow: 0 0 20px 0 hsla(0, 0%, 0%, .4); */
 
   @media screen and (max-width: 1000px) {
     ${Image} {
@@ -66,7 +54,7 @@ class Projects extends React.Component {
         }
 
         <Section>
-        <Heading>Description</Heading>
+        <SectionHeading>Description</SectionHeading>
         <Paragraph>
           {projData.description}
         </Paragraph>
@@ -76,7 +64,7 @@ class Projects extends React.Component {
 
         {projData.features !== undefined &&
           <Section>
-            <Heading>Features</Heading>
+            <SectionHeading>Features</SectionHeading>
             <ListItems>
               {projData.features.map((item, index) =>
                 <ListItem key={item + "-" + index}>
@@ -91,7 +79,7 @@ class Projects extends React.Component {
 
         {projData.technologies !== undefined &&
           <Section>
-            <Heading>Technologies</Heading>
+            <SectionHeading>Technologies</SectionHeading>
             <ListItems>
               {projData.technologies.map((item, index) =>
                 <ListItem key={item.name + "-" + index}>
