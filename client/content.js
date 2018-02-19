@@ -3,7 +3,11 @@ const example = {
     heading: "PROJ_NAME",
     subheading: "PROJ_SUBHEADING",
     description: "PROJ_DESCRIPTION",
-    image: "IMAGE_LINK",
+    images: [
+      { original: "", thumnail: "" },
+      { original: "", thumnail: "" },
+      { original: "", thumnail: "" }
+    ],
     features: ["FEATURE_NAME", "FEATURE_NAME"],
     technologies: [
       { name: "TECH_NAME", description: "TECH_DESC", link: "TECH_LINK" }
@@ -12,7 +16,11 @@ const example = {
       github: "EXT_LINK",
       npm: "EXT_LINK",
       demo: "EXT_LINK"
-    }
+    },
+    resources: [
+      { name: "this project is online at ", link: "" },
+      { name: "source code available at ", link: "" }
+    ]
   }
 };
 
@@ -22,8 +30,11 @@ const content = {
     subheading:
       "A sophisticated color palette generation utility for designers & developers",
     description: `A sophisticated color palette generator and manipulation utility. Palette Town allows you to generate an infinite variety of color palettes from selected color harmonies and modifiers.Reorder color palettes arbitrarily by dragging and dropping swatches. Add and remove individual swatches from your palette or modify swatches color values in your preferred color space.`,
-    image: "https://i.imgur.com/gD4pERM.png",
-    features: ["feature one", "feature two", "feature three", "feature four"],
+    images: [
+      { original: "https://i.imgur.com/3iG9kU9.png"},
+      { original: "https://i.imgur.com/134eGjO.png"},
+      { original: "https://i.imgur.com/8B91few.png"}
+    ],
     technologies: [
       {
         name: "react",
@@ -81,7 +92,19 @@ const content = {
     links: {
       github: "https://github.com/plexey/palette-town",
       demo: "http://palettetown.surge.sh/"
-    }
+    },
+    resources: [
+      {
+        name: "This project is online at ",
+        alias: "palettetown.surge.sh",
+        link: "http://palettetown.surge.sh/"
+      },
+      {
+        name: "View the source code on my ",
+        alias: "GITHUB PAGE",
+        link: "https://github.com/plexey/palette-town"
+      }
+    ]
   },
 
   reactdepthoffield: {
@@ -90,13 +113,33 @@ const content = {
       "A React module for applying a dynamic depth of field to a set of elements",
     description:
       "A React module for applying a dynamic depth of field effect to a set of elements.",
-    image: "https://i.imgur.com/ZkV7Z7l.png",
-    features: ["feature one", "feature two", "feature three", "feature four"],
+    images: [
+      { original: "https://i.imgur.com/by5zndE.png", thumnail: "" },
+      { original: "https://i.imgur.com/o4cFNqy.png", thumnail: "" },
+      { original: "https://i.imgur.com/AVLO0Hc.png", thumnail: "" }
+    ],
     links: {
       github: "https://github.com/plexey/react-depth-of-field",
       npm: "https://www.npmjs.com/package/react-depth-of-field",
       demo: "http://react-depth-of-field.surge.sh/"
-    }
+    },
+    resources: [
+      {
+        name: "This project is online at ",
+        alias: "react-depth-of-field.surge.sh",
+        link: "http://react-depth-of-field.surge.sh/"
+      },
+      {
+        name: "View this package is online at ",
+        alias: "MY NPM",
+        link: "https://www.npmjs.com/package/react-depth-of-field"
+      },
+      {
+        name: "View the source code on my ",
+        alias: "GITHUB PAGE",
+        link: "https://github.com/plexey/react-depth-of-field"
+      }
+    ]
   },
 
   reactreduxtodo: {
@@ -104,12 +147,10 @@ const content = {
     subheading: "A todo app built with React & Redux",
     description:
       "A simple todo app built with React & Redux. This app features animated list items using the react-flip-move package.",
-    image: "https://i.imgur.com/iCy5nsb.png",
-    features: [
-      "Animated List items",
-      "feature two",
-      "feature three",
-      "feature four"
+    images: [
+      { original: "https://i.imgur.com/lTugTvJ.png", thumnail: "" },
+      { original: "https://i.imgur.com/oU4cqW3.png", thumnail: "" },
+      { original: "https://i.imgur.com/6cTh9mo.png", thumnail: "" }
     ],
     technologies: [
       {
@@ -143,7 +184,19 @@ const content = {
     links: {
       github: "https://github.com/plexey/react-redux-todo",
       demo: "http://reactreduxtodo.surge.sh/"
-    }
+    },
+    resources: [
+      {
+        name: "This project is online at ",
+        alias: "reactreduxtodo.surge.sh",
+        link: "http://reactreduxtodo.surge.sh/"
+      },
+      {
+        name: "View the source code on my ",
+        alias: "GITHUB PAGE",
+        link: "https://github.com/plexey/react-redux-todo"
+      }
+    ]
   },
 
   personalwebsite: {
@@ -151,8 +204,7 @@ const content = {
     subheading: "My own personal website",
     description:
       "This is the project write-up for the website you're using it right now! This website was built with React and features an extremely minimal webpack configuration. The application source code utilises styled-components, an implementation of CSS in JS, and thus contains no CSS files at all!",
-    image: "https://i.imgur.com/liTvhh1.png",
-    features: ["FEATURE_NAME", "FEATURE_NAME"],
+    images: [{ original: "https://i.imgur.com/liTvhh1.png", thumnail: "" }],
     technologies: [
       {
         name: "react",
@@ -181,7 +233,14 @@ const content = {
     ],
     links: {
       github: "https://github.com/plexey/personal-website"
-    }
+    },
+    resources: [
+      {
+        name: "View the source code on my ",
+        alias: "GITHUB PAGE",
+        link: "https://github.com/plexey/personal-website"
+      }
+    ]
   }
 };
 
