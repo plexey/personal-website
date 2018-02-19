@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Paragraph = styled.p`
-  font-size: 19px;
+  font-size: 20px;
 `;
 
 export default Paragraph;
