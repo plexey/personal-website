@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import content from '../content';
+import Section from '../components/Section';
 
 const Wrapper = styled.div`
   grid-column-start: cline-2;
@@ -8,18 +9,6 @@ const Wrapper = styled.div`
   font-family: ${props => props.theme.font};
   padding: 0 0 60px 0;
 `;
-
-const Section = styled.div`
-  background: hsl(0, 0%, 95%);
-  padding: 20px;
-  margin: 40px 0 0 0;
-  
-  @media screen and (max-width: 1000px) {
-    ${Section} {
-      margin: 20px 0 0 0;
-    }
-  }
-`
 
 const Heading = styled.h1`
   font-size: 27px;
