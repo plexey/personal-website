@@ -18,6 +18,14 @@ const HeaderContainer = styled.header`
   border-style: solid;
   border-width: 0 0 2px 0;
   border-color: hsl(0, 0%, 20%);
+  transition: 200ms ease all;
+  z-index: 999;
+
+  @media screen and (max-width: 1300px) {
+    ${HeaderContainer} {
+      grid-template-columns: ${props => props.theme.tabGridTempCol};
+    }
+  }
 
   @media screen and (max-width: 1000px) {
     ${HeaderContainer} {
@@ -60,6 +68,11 @@ const ExternalLink = styled.a`
   font-size: 22px;
   text-decoration: none;
   color: hsl(0, 0%, 10%);
+  transition: 200ms ease all;
+
+  ${ExternalLink}:hover {
+    transform: scale(1.2,1.2);
+  }
 `
 
 export default class Header extends React.Component {
