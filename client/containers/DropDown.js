@@ -21,7 +21,6 @@ const List = styled.ul`
 `;
 
 const activeClassName = 'active-link'
-
 const ListItem = styled(NavLink).attrs({
   activeClassName
 }) `
