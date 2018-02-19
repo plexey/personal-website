@@ -10,6 +10,12 @@ const FooterContainer = styled.footer`
   background: hsl(0, 0%, 80%);
   font-family: ${props => props.theme.font};
 
+  @media screen and (max-width: 1300px) {
+    ${FooterContainer} {
+      grid-template-columns: ${props => props.theme.tabGridTempCol};
+    }
+  }
+
   @media screen and (max-width: 1000px) {
     ${FooterContainer} {
       grid-template-columns: ${props => props.theme.phoneGridTempCol};
