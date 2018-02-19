@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import content from '../content';
 import Section from '../components/Section';
+import Paragraph from '../components/Paragraph';
 
 const Wrapper = styled.div`
   grid-column-start: cline-2;
@@ -20,10 +21,6 @@ const Heading = styled.h1`
   border-width: 0 0 1px 0;
   border-color: hsla(0, 0%, 0%, .15);
   color: hsl(0, 0%, 15%);
-`;
-
-const Paragraph = styled.p`
-  font-size: 19px;
 `;
 
 const ListItems = styled.ul`
