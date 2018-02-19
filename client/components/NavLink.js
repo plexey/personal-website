@@ -23,6 +23,11 @@ const Link = styled(NavLink).attrs({
     color: ${props => props.theme.brandColor};
     background: hsl(0, 0%, 20%);
   }
+
+  ${Link}:hover {
+    color: ${props => props.theme.brandColor};
+    background: hsl(0, 0%, 20%);
+  }
 `
 
 export default Link;
