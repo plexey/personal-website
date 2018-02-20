@@ -9,7 +9,7 @@ const Link = styled(NavLink).attrs({
 }) `
   display: flex;
   align-items: center;
-  color: hsl(0, 0%, 10%);
+  color: ${props => props.theme.textColor};
   font-size: 17px;
   text-decoration: none;
   background: none;
