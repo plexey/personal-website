@@ -83,7 +83,7 @@ const Link = styled.a`
   border-radius: 2px;
   background: ${props => props.theme.brandColor};
   font-size: 18px;
-  color: hsl(0, 0%, 20%);
+  color: ${props => props.theme.textColor};
   text-decoration: none;
   font-weight: bold;
   transition: 200ms ease all;
