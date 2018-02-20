@@ -1,145 +1,121 @@
 import React, { Component } from "react";
+import { Route, NavLink } from "react-router-dom";
 import styled from "styled-components";
-import ImageGallery from "react-image-gallery";
+import ContentWrapper from "../components/ContentWrapper";
 import content from "../content";
-import Section from "../components/Section";
-import SectionContent from "../components/SectionContent";
-import Paragraph from "../components/Paragraph";
-import SectionHeading from "../components/SectionHeading";
-import SectionSubeading from "../components/SectionSubeading";
-import "react-image-gallery/styles/css/image-gallery.css";
+import Thumnail from "./Thumnail";
+import FlipMove from "react-flip-move";
 
-const Wrapper = styled.div`
-  grid-column-start: cline-2;
-  grid-column-end: cline-3;
-  font-family: ${props => props.theme.font};
-  padding: 0 0 60px 0;
-`;
+// returns deduped array of tags from each project in 'content'
+function getTags(projects) {
+  const allTags = projects
+    .map((item, index) => item.tags)
+    .reduce((prev, curr) => prev.concat(curr));
+  return [...new Set(allTags)];
+}
 
-const GalleryWrapper = styled.div`
-  margin: 40px 0 0 0;
-  box-shadow: 0 0 20px 0 hsla(0, 0%, 0%, 0.1);
-`;
+function getThumnails(projects, projectNames, filter) {
+  const filtered =
+    filter !== "show all"
+      ? projects.filter(project => project.tags.includes(filter))
+      : projects;
+  return filtered.map((item, index) => (
+    <Thumnail
+      key={`project-${item.heading}`}
+      locationUrl={`projects/${item.name}`}
+      heading={item.heading}
+      imageSrc={item.images[0].original}
+    />
+  ));
+}
 
-const ListItems = styled.ul`
-  font-size: 19px;
-`;
-
-const ListItem = styled.li`
-  padding: 5px 0 5px 0;
-  margin: 0 0 0 20px;
-  list-style-type: circle;
-`;
-
-const Link = styled.a`
-  font-weight: bold;
-  text-decoration: none;
-  color: hsl(220, 0%, 20%);
-  padding: 5px 5px 5px 5px;
-  border-radius: 3px;
-
-  ${Link}:hover {
-    background: ${props => props.theme.brandColor};
-  }
-`;
-
-const Image = styled.img`
-  margin: 50px 0 20px 0;
+const Thumnails = styled(FlipMove)`
+  display: grid;
+  grid-template-columns: [thumb-col-1] 50% [thumb-col-2] 50% [thumb-col-3];
+  grid-gap: 35px;
   width: 100%;
+  margin: 0 0 100px 0;
+`;
 
-  @media screen and (max-width: 1000px) {
-    ${Image} {
-      min-width: 100%;
-      width: 100%;
-    }
+const TagsContainer = styled.ul`
+  display: flex;
+  flex-direction: row;
+  margin: 40px 0 0 0;
+`;
+
+const Tag = styled.li`
+  background: ${props =>
+    props.active ? props.theme.buttonActive : props.theme.brandColor};
+  box-shadow: 0 3px 0 0 ${props => props.theme.brandColorDark};
+  margin: 0 10px 0 0;
+  padding: 5px 10px 5px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  ${Tag}:hover {
+    background: ${props => props.theme.buttonActive};
   }
 `;
 
-class Projects extends React.Component {
+const FilterMessage = styled.p`
+  margin: 40px 0 20px 0;
+`;
+
+class Projects extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      filter: "show all"
+    };
+  }
+
+  changeFilter = val => {
+    const { filter } = this.state;
+    this.setState({
+      filter: val
+    });
+  };
   render() {
-    const { match } = this.props;
-    const projData = content[match.params.project];
+    const { filter } = this.state;
+    const projectNames = Object.keys(content);
+    const projects = Object.values(content);
+
+    const tags = getTags(projects).map(tag => (
+      <Tag
+        active={filter === tag}
+        onClick={() => this.changeFilter(tag)}
+        key={`tag-${tag}`}
+      >
+        {tag}
+      </Tag>
+    ));
+
+    const thumnails = getThumnails(projects, projectNames, filter);
+
     return (
-      <Wrapper>
-        {/* Image */}
+      <ContentWrapper>
+        <TagsContainer>
+          <Tag
+            active={filter === "show all"}
+            onClick={() => this.changeFilter("show all")}
+            key={`tag-showall`}
+          >
+            show all
+          </Tag>
+          {tags}
+        </TagsContainer>
+        <FilterMessage>
+          Showing {thumnails.length} projects filtered by '{filter}'
+        </FilterMessage>
 
-        {projData.images !== undefined && (
-          <GalleryWrapper>
-            <ImageGallery
-              showThumbnails={false}
-              showBullets={true}
-              items={projData.images}
-              showFullscreenButton={false}
-              showPlayButton={false}
-            />
-          </GalleryWrapper>
-        )}
+        <Thumnails typeName="ul" duration={200} easing="ease-out">
+          {thumnails}
+        </Thumnails>
 
-        {/* {projData.image !== undefined && (
-          <Image src={projData.image} alt={projData.heading} />
-        )} */}
-
-        <Section>
-          <SectionHeading>About this project</SectionHeading>
-          <SectionContent>
-            <Paragraph>{projData.description}</Paragraph>
-          </SectionContent>
-        </Section>
-
-        {/* Features */}
-
-        {projData.features !== undefined && (
-          <Section>
-            <SectionHeading>Features</SectionHeading>
-            <SectionContent>
-              <ListItems>
-                {projData.features.map((item, index) => (
-                  <ListItem key={item + "- " + index}>{item}</ListItem>
-                ))}
-              </ListItems>
-            </SectionContent>
-          </Section>
-        )}
-
-        {/* Technologies */}
-
-        {projData.technologies !== undefined && (
-          <Section>
-            <SectionHeading>Technical Sheet</SectionHeading>
-            <SectionSubeading>
-              Code technologies used while working on this project
-            </SectionSubeading>
-            <SectionContent>
-              <ListItems>
-                {projData.technologies.map((item, index) => (
-                  <ListItem key={item.name + "-" + index}>
-                    <Link href={item.link}>{item.name}</Link> -{" "}
-                    {item.description}
-                  </ListItem>
-                ))}
-              </ListItems>
-            </SectionContent>
-          </Section>
-        )}
-
-        {/* Resources */}
-
-        {projData.resources !== undefined && (
-          <Section>
-            <SectionHeading>Resources</SectionHeading>
-            <SectionContent>
-              <ListItems>
-                {projData.resources.map((item, index) => (
-                  <ListItem key={item.name + "-" + index}>
-                    {item.name}
-                    <Link href={item.link}>{item.alias}</Link>
-                  </ListItem>
-                ))}
-              </ListItems>
-            </SectionContent>
-          </Section>
-        )}
-      </Wrapper>
+        {/* <Thumnails>{thumnails}</Thumnails> */}
+      </ContentWrapper>
     );
   }
 }
