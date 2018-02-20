@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
-import Home from './Home';
+import Home from "./Home";
 import Projects from "./Projects";
 import Project from "./Project";
 import Contact from "./Contact";
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
   background: hsl(0, 0%, 90%);
   transition: 200ms ease all;
-
+  
   @media screen and (max-width: 1300px) {
     ${Wrapper} {
       grid-template-columns: ${props => props.theme.tabGridTempCol};
