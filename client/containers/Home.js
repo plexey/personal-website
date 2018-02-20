@@ -29,7 +29,7 @@ const Portrait = styled.img`
 `;
 
 const Heading = styled.h2`
-  color: hsl(0, 0%, 15%);
+  color: ${props => props.theme.textColor};
   font-size: 25px;
   font-weight: bold;
 `;
