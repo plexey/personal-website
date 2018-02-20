@@ -217,7 +217,6 @@ const content = {
         description: "A JavaScript library for building user interfaces",
         link: "https://reactjs.org/"
       },
-
       {
         name: "react-router",
         description: "Declarative routing for React",
@@ -289,6 +288,40 @@ const content = {
       }
     ],
     tags: ["javascript", "react"]
+  },
+
+  unaryclock: {
+    name: "unaryclock",
+    heading: "unary clock",
+    subheading: "A simple unary clock web component",
+    description: "A unary clock built with React and styled using CSS Grid",
+    images: [
+      { original: "https://i.imgur.com/MchaUbd.png" }
+    ],
+    technologies: [
+      {
+        name: "react",
+        description: "A JavaScript library for building user interfaces",
+        link: "https://reactjs.org/"
+      }
+    ],
+    links: {
+      github: "https://github.com/plexey/react-unary-clock",
+      codepen: "https://codepen.io/Trinca/pen/YrrGoN"
+    },
+    resources: [
+      {
+        name: "See it working at",
+        alias: "codepen",
+        link: "https://codepen.io/Trinca/pen/YrrGoN"
+      },
+      {
+        name: "View code on my",
+        alias: "GITHUB PAGE",
+        link: "https://github.com/plexey/react-unary-clock"
+      }
+    ],
+    tags: ["css", "react", "javascript"]
   }
 };
 
