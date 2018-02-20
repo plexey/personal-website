@@ -83,7 +83,8 @@ export default class Header extends React.Component {
           <Heading>Tom Trinca</Heading>
           <NavLinks>
             <NavLink exact to="/">Home</NavLink>
-            <DropDown title={"Projects"} listItems={content} />
+            <NavLink exact to="/Projects">Projects</NavLink>
+            {/* <DropDown title={"Projects"} listItems={content} /> */}
             <NavLink to="/contact">Contact</NavLink>
           </NavLinks>
           <ExternalLinks>
