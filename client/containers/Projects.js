@@ -53,6 +53,7 @@ const Tag = styled.li`
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
+  color: ${props => props.theme.textColor};
 
   ${Tag}:hover {
     background: ${props => props.theme.buttonActive};
@@ -60,6 +61,8 @@ const Tag = styled.li`
 `;
 
 const FilterMessage = styled.p`
+  color: ${props => props.theme.textColor};
+  font-size: 18px;
   margin: 40px 0 20px 0;
 `;
 
