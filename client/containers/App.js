@@ -8,6 +8,8 @@ import Footer from './Footer';
 
 const theme = {
   brandColor: 'hsl(170, 100%, 60%)',
+  brandColorDark: 'hsl(170, 100%, 40%)',
+  buttonActive: 'hsl(170, 100%, 80%)',
   headingFont: `'Walter Turncoat', cursive`,
   font: `'Oxygen', sans-serif`,
   deskGridTempCol: '[cline-1] 20% [cline-2] auto [cline-3] 20% [cline-4]',
