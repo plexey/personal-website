@@ -1,5 +1,6 @@
 const example = {
   projectName: {
+    name: "projectname",
     heading: "PROJ_NAME",
     subheading: "PROJ_SUBHEADING",
     description: "PROJ_DESCRIPTION",
@@ -18,22 +19,24 @@ const example = {
       demo: "EXT_LINK"
     },
     resources: [
-      { name: "this project is online at ", link: "" },
-      { name: "source code available at ", link: "" }
-    ]
+      { name: "", alias: "", link: "" },
+      { name: "", alias: "", link: "" }
+    ],
+    tags: ["tag_one", "tag_one"]
   }
 };
 
 const content = {
   palettetown: {
+    name: "palettetown",
     heading: "Palette Town",
     subheading:
       "A sophisticated color palette generation utility for designers & developers",
     description: `A sophisticated color palette generator and manipulation utility. Palette Town allows you to generate an infinite variety of color palettes from selected color harmonies and modifiers.Reorder color palettes arbitrarily by dragging and dropping swatches. Add and remove individual swatches from your palette or modify swatches color values in your preferred color space.`,
     images: [
-      { original: "https://i.imgur.com/3iG9kU9.png"},
-      { original: "https://i.imgur.com/134eGjO.png"},
-      { original: "https://i.imgur.com/8B91few.png"}
+      { original: "https://i.imgur.com/3iG9kU9.png" },
+      { original: "https://i.imgur.com/134eGjO.png" },
+      { original: "https://i.imgur.com/8B91few.png" }
     ],
     technologies: [
       {
@@ -104,10 +107,11 @@ const content = {
         alias: "GITHUB PAGE",
         link: "https://github.com/plexey/palette-town"
       }
-    ]
+    ],
+    tags: ["javascript", "react", "mobx", "css modules"]
   },
-
   reactdepthoffield: {
+    name: "reactdepthoffield",
     heading: "React Depth of Field",
     subheading:
       "A React module for applying a dynamic depth of field to a set of elements",
@@ -139,10 +143,11 @@ const content = {
         alias: "GITHUB PAGE",
         link: "https://github.com/plexey/react-depth-of-field"
       }
-    ]
+    ],
+    tags: ["javascript", "react"]
   },
-
   reactreduxtodo: {
+    name: "reactreduxtodo",
     heading: "React Redux Todo",
     subheading: "A todo app built with React & Redux",
     description:
@@ -196,10 +201,11 @@ const content = {
         alias: "GITHUB PAGE",
         link: "https://github.com/plexey/react-redux-todo"
       }
-    ]
+    ],
+    tags: ["javascript", "react", "redux"]
   },
-
   personalwebsite: {
+    name: "personalwebsite",
     heading: "Personal Website",
     subheading: "My own personal website",
     description:
@@ -224,7 +230,11 @@ const content = {
           "Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress",
         link: "https://github.com/styled-components/styled-components"
       },
-
+      {
+        name: "firebase",
+        description: "a mobile and web application development platform ",
+        link: "https://firebase.google.com/"
+      },
       {
         name: "font awesome",
         description: "Popular vector icons and logos library",
@@ -240,7 +250,45 @@ const content = {
         alias: "GITHUB PAGE",
         link: "https://github.com/plexey/personal-website"
       }
-    ]
+    ],
+    tags: ["javascript", "react", "CSS in JS"]
+  },
+  reactstack: {
+    name: "reactstack",
+    heading: "React Stack",
+    subheading:
+      "A React component facilitating stacking of and animated iteration through an arbitary set of elements",
+    description:
+      "Reack Stack is a react component that functions like an image gallery.",
+    images: [
+      { original: "https://i.imgur.com/V8U10g5.png" },
+      { original: "https://i.imgur.com/2MRHBs8.png" },
+      { original: "https://i.imgur.com/NnNURRG.png" }
+    ],
+    technologies: [
+      {
+        name: "react",
+        description: "A JavaScript library for building user interfaces",
+        link: "https://reactjs.org/"
+      }
+    ],
+    links: {
+      github: "https://github.com/plexey/react-stack",
+      demo: "http://react-stack.surge.sh/"
+    },
+    resources: [
+      {
+        name: "this project is online at ",
+        alias: "react-stack.surge.sh",
+        link: "http://react-stack.surge.sh/"
+      },
+      {
+        name: "source code available at ",
+        alias: "MY GITHUB",
+        link: "https://github.com/plexey/react-stack"
+      }
+    ],
+    tags: ["javascript", "react"]
   }
 };
 
