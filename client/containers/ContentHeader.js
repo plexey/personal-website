@@ -120,7 +120,18 @@ const ContentHeader = () => (
       render={() => (
         <Content>
           <Heading>Home</Heading>
-          <Subheading>Some info about me</Subheading>
+          <Subheading>Who am I?</Subheading>
+        </Content>
+      )}
+    />
+
+    <Route
+      exact
+      path="/projects"
+      render={() => (
+        <Content>
+          <Heading>Projects</Heading>
+          <Subheading>Check out my latest web development projects</Subheading>
         </Content>
       )}
     />
