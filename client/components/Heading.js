@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Heading = styled.h1`
-  color: hsl(0, 0%, 10%);
+  color: ${props => props.theme.textColor};
   font-size: 29px;
   font-weight: bold;
   padding: 0 30px 0 0;
