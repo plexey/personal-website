@@ -3,6 +3,8 @@ import { Route } from "react-router-dom";
 import styled from "styled-components";
 import Home from './Home';
 import Projects from "./Projects";
+import Project from "./Project";
+import Contact from "./Contact";
 
 const Wrapper = styled.div`
   display: grid;
@@ -26,14 +28,13 @@ const Wrapper = styled.div`
   }
 `;
 
-const Contact = () => <h3>Contact</h3>;
-
 class Content extends Component {
   render() {
     return (
       <Wrapper>
         <Route exact path="/" component={Home} />
-        <Route exact path="/projects/:project" component={Projects} />
+        <Route exact path="/projects" component={Projects} />
+        <Route exact path="/projects/:project" component={Project} />
         <Route exact path="/contact" component={Contact} />
       </Wrapper>
     );
