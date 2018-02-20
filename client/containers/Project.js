@@ -34,7 +34,7 @@ const ListItem = styled.li`
 const Link = styled.a`
   font-weight: bold;
   text-decoration: none;
-  color: hsl(220, 0%, 20%);
+  color: ${props => props.theme.textColor};
   padding: 5px 5px 5px 5px;
   border-radius: 3px;
 
