@@ -11,16 +11,21 @@ const Wrapper = styled.li`
 
 const Link = styled(NavLink)`
   text-decoration: none;
-  color: hsl(0, 0%, 20%);
+  color: ${props => props.theme.textColor};
 `;
 
 const Heading = styled.h2`
+  color: ${props => props.theme.textColor};
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 10px 0 10px 0;
+  padding: 8px 0 8px 0;
   background: white;
+  background: linear-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 95%));
   text-decoration: none;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: hsla(0, 0%, 0%, 0.2);
 `;
 
 const Image = styled.img`
