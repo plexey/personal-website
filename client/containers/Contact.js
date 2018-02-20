@@ -1,199 +1,115 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../components/Button";
-
-function validateEmail(email) {
-  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-}
-
-const Wrapper = styled.div`
-  grid-column-start: cline-2;
-  grid-column-end: cline-3;
-  font-family: ${props => props.theme.font};
-  padding: 0 0 60px 0;
-`;
+import ContentWrapper from "../components/ContentWrapper";
 
 const Content = styled.div`
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 50px 0 0 0;
-  background: hsl(0, 0%, 95%);
-  padding: 20px;
-  border-radius: 3px;
-  box-shadow: 0 0 20px 0 hsla(0, 0%, 0%, 0.1);
-`;
-
-const Heading = styled.h2`
-  color: hsl(0, 0%, 15%);
-  font-size: 25px;
-  font-weight: bold;
-`;
-
-const Form = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0 0 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: ${props => props.theme.textColor};
 `;
 
-const Input = styled.input`
+const Heading = styled.h1`
+  margin: 50px 0 0 0;
+  font-size: 24px;
+  color: ${props => props.theme.textColor};
+`;
+
+const EmailLink = styled.a`
+  margin: 50px 0 50px 0;
+  font-size: 22px;
+  padding: 20px 30px 20px 30px;
+  border: none;
+  border-radius: 3px;
+  color: ${props => props.theme.textColor};
+  background: ${props => props.theme.brandColor};
   font-family: ${props => props.theme.font};
-  font-size: 20px;
-  margin: 0 0 0 10px;
-  border-width: 0 0 1px 0;
-  border-color: hsl(0, 0%, 70%);
-  border-style: solid;
-  background: none;
-  min-height: 30px;
-  min-width: 100%;
-  color: ${props => (props.status === false ? "red" : "black")};
+  font-weight: bold;
+  box-shadow: 0 3px 0 0 ${props => props.theme.brandColorDark};
+  cursor: pointer;
+  transition: 200ms ease all;
+  text-decoration: none;
+
+  ${EmailLink}:hover {
+    background: ${props => props.theme.buttonActive};
+  }
 `;
 
-const InputWrapper = styled.div`
-  font-size: 20px;
+const MediaLinks = styled.div`
+  display: flex;
+`;
+
+const SocialLink = styled.a`
+  font-size: 22px;
+  padding: 15px 25px 15px 25px;
+  border: none;
+  border-radius: 4px;
+  color: ${props => props.textColor};
+  background: ${props => props.primary};
+  font-family: ${props => props.theme.font};
+  font-weight: bold;
+  box-shadow: 0 3px 0 0 ${props => props.secondary};
+  cursor: pointer;
+  transition: 200ms ease all;
+  text-decoration: none;
+  text-transform: uppercase;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin: 10px;
-  color: red;
-  min-width: 70%;
-  color: ${props => (props.status === false ? "red" : "black")};
+  align-items: center;margin: 0 0 5px 0;
+  margin: 0 10px 0 0;
+
+  ${EmailLink}:hover {
+    background: ${props => props.theme.buttonActive};
+  }
 `;
 
-export default class Contact extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      email: "",
-      message: "",
-      nameStatus: null,
-      emailStatus: null,
-      messageStatus: null
-    };
-  }
+const LinkName = styled.p`
+  font-size: 17px;
+  font-weight: bold;
+  padding: 0 0 0 5px;
+`;
 
-  handleName = val => {
-    const { name } = this.state;
-    if (val.length >= 70) {
-      return;
-    } else {
-      this.setState({
-        name: val
-      });
-    }
-  };
+const Contact = () => {
+  return (
+    <ContentWrapper>
+      <Content>
+        <Heading>
+          If you'd like to get in touch regarding a project, to make an enquiry
+          or simply to chat, email me at tptrinca@gmail.com or click the button
+          bellow. Alternatively, find me via the social media links below.
+        </Heading>
+        <EmailLink href="mailto:tptrinca@gmail.com">Send me an email</EmailLink>
+        <MediaLinks>
+          <SocialLink
+            textColor={`hsl(0, 0%, 90%)`}
+            primary={`#505050`}
+            secondary={`#383838`}
+            href="LINK"
+          >
+            <i className="fab fa-github" /> <LinkName>Github</LinkName>
+          </SocialLink>
+          <SocialLink
+            textColor={`hsl(0, 0%, 90%)`}
+            primary={`#19AAEA`}
+            secondary={`#106C93`}
+            href="LINK"
+          >
+            <i className="fab fa-twitter" /> <LinkName>Twitter</LinkName>
+          </SocialLink>
+          <SocialLink
+            textColor={`hsl(0, 0%, 90%)`}
+            primary={`#1475B1`}
+            secondary={`#0A405D`}
+            href="LINK"
+          >
+            <i className="fab fa-linkedin-in" /> <LinkName>Linked In</LinkName>
+          </SocialLink>
+        </MediaLinks>
+      </Content>
+    </ContentWrapper>
+  );
+};
 
-  handleEmail = val => {
-    const { email } = this.state;
-    if (val === "") {
-      this.setState({
-        emailStatus: null
-      });
-    }
-    this.setState({
-      email: val
-    });
-  };
-
-  validateEmail = val => {
-    const { email } = this.state;
-    const validEmail = validateEmail(val);
-    if (validEmail) {
-      this.setState({
-        emailStatus: true
-      });
-    }
-    if (validEmail === false) {
-      this.setState({
-        emailStatus: false
-      });
-    }
-    if (val === "") {
-      this.setState({
-        emailStatus: null
-      });
-    }
-  };
-
-  handleMessage = val => {
-    const { message } = this.state;
-    if (val >= 200) {
-      return;
-    } else {
-      this.setState({
-        message: val
-      });
-    }
-  };
-
-  openMailTo = () => {
-    window.location.href = "mailto:tptrinca@example.org";
-  }
-
-  render() {
-    const { name, email, message, emailStatus } = this.state;
-    return (
-      <Wrapper>
-        <Content>
-          <Heading>
-            If you'd like to get in touch, fill the form below or send me an
-            email at{" "}
-            <span onClick={() => this.openMailTo()}>
-              tptrinca@gmail.com
-            </span>
-          </Heading>
-          <Form>
-            <InputWrapper>
-              <i className="fas fa-user" />
-              <Input
-                onChange={event => this.handleName(event.target.value)}
-                placeholder="Your name"
-                type="text"
-                name="name"
-                value={name}
-              />
-            </InputWrapper>
-            <InputWrapper status={emailStatus}>
-              <i className="fas fa-envelope" />
-              <Input
-                status={emailStatus}
-                onChange={event => this.handleEmail(event.target.value)}
-                onBlur={event => this.validateEmail(event.target.value)}
-                placeholder="Email Address"
-                type="text"
-                name="email"
-                value={email}
-              />
-            </InputWrapper>
-            <InputWrapper>
-              <i className="fas fa-pencil-alt" />
-              <Input
-                onChange={event => this.handleMessage(event.target.value)}
-                placeholder="Your message"
-                type="text"
-                name="message"
-                value={message}
-              />
-            </InputWrapper>
-            <InputWrapper>
-              <Button>Submit Message</Button>
-              <Button>Clear</Button>
-            </InputWrapper>
-          </Form>
-          <InputWrapper>
-            <Button>GitHub</Button>
-            <Button>Twitter</Button>
-            <Button>Codepen</Button>
-            <Button>NPM</Button>
-          </InputWrapper>
-        </Content>
-      </Wrapper>
-    );
-  }
-}
+export default Contact;
