@@ -5,17 +5,18 @@ const Wrapper = styled.div`
   grid-column-start: cline-2;
   grid-column-end: cline-3;
   font-family: ${props => props.theme.font};
-  padding: 0 0 60px 0;
-  display: grid;
-  /* grid-template-rows: auto;  */
 `;
 
 const Content = styled.div`
-  width: 100%;
+  padding: 20px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px 0 0 0;
+  margin: 70px 0 0 0;
+  background: hsl(0, 0%, 95%);
+  border-radius: 3px;
+  box-shadow: 0 0 20px 0 hsla(0, 0%, 0%, 0.1);
 `;
 
 const Portrait = styled.img`
@@ -39,7 +40,7 @@ const Subheading = styled.h3`
 `;
 
 const Paragraph = styled.p`
-  font-size: 17px;
+  font-size: 19px;
   margin: 10px 0 0 0;
 `;
 
@@ -55,10 +56,10 @@ const Home = () => {
         <Paragraph>
           I am a Web Developer based in Melbourne, Australia. I have a varied
           background with a Diploma of Website Development, a Bachelor’s degree
-          in both General Arts & Visual Arts as well as a Masters degree in Arts
-          Management (with Distinction). These qualifications have served to
-          provide me with diverse skill set including but not limited to
-          programming, design and project management.
+          in General Arts & Visual Arts as well as a Masters degree in Arts
+          Management (with Distinction). These qualifications have provided me
+          with diverse skill set including but not limited to programming,
+          design and project management.
         </Paragraph>
         <Paragraph>
           I have worked on a multitude of web projects, designing and building
