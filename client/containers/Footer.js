@@ -36,13 +36,22 @@ const FooterContent = styled.div`
 const Heading = styled.h1`
   color: hsl(0, 0%, 50%);
   font-weight: bold;
+
+  @media screen and (max-width: 1000px) {
+    ${Heading} {
+      text-align: center;
+      font-size: 13px;
+    }
+  }
 `;
 
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
-        <Heading>Copyright &copy; 2018 Thomas Trinca - Melbourne based Web Developer</Heading>
+        <Heading>
+          Copyright &copy; 2018 Thomas Trinca - Melbourne based Web Developer
+        </Heading>
       </FooterContent>
     </FooterContainer>
   );
