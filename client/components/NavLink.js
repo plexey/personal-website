@@ -1,12 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
-const activeClassName = 'active-link'
+const activeClassName = "active-link";
 
 const Link = styled(NavLink).attrs({
   activeClassName
-}) `
+})`
   display: flex;
   align-items: center;
   color: ${props => props.theme.textColor};
@@ -28,6 +27,11 @@ const Link = styled(NavLink).attrs({
     color: ${props => props.theme.brandColor};
     background: hsl(0, 0%, 20%);
   }
-`
+
+  @media screen and (max-width: 1300px) {
+    ${Link} {
+      font-size: 14px;
+  }
+`;
 
 export default Link;
