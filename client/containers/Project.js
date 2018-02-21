@@ -1,34 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import ImageGallery from "react-image-gallery";
-import content from "../content";
+import ContentWrapper from '../components/ContentWrapper';
 import Section from "../components/Section";
 import SectionContent from "../components/SectionContent";
 import Paragraph from "../components/Paragraph";
 import SectionHeading from "../components/SectionHeading";
 import SectionSubeading from "../components/SectionSubeading";
+import ListItem from "../components/ListItem";
+import content from "../content";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-const Wrapper = styled.div`
-  grid-column-start: cline-2;
-  grid-column-end: cline-3;
-  font-family: ${props => props.theme.font};
-  padding: 0 0 60px 0;
-`;
-
 const GalleryWrapper = styled.div`
-  margin: 40px 0 0 0;
   box-shadow: 0 0 20px 0 hsla(0, 0%, 0%, 0.1);
 `;
 
-const ListItems = styled.ul`
-  font-size: 19px;
-`;
-
-const ListItem = styled.li`
-  padding: 5px 0 5px 0;
-  margin: 0 0 0 20px;
-  list-style-type: circle;
+const List = styled.ul`
 `;
 
 const Link = styled.a`
@@ -60,8 +47,8 @@ class Projects extends React.Component {
     const { match } = this.props;
     const projData = content[match.params.project];
     return (
-      <Wrapper>
-        {/* Image */}
+      <ContentWrapper>
+        {/* Images */}
 
         {projData.images !== undefined && (
           <GalleryWrapper>
@@ -74,10 +61,6 @@ class Projects extends React.Component {
             />
           </GalleryWrapper>
         )}
-
-        {/* {projData.image !== undefined && (
-          <Image src={projData.image} alt={projData.heading} />
-        )} */}
 
         <Section>
           <SectionHeading>About this project</SectionHeading>
@@ -92,11 +75,11 @@ class Projects extends React.Component {
           <Section>
             <SectionHeading>Features</SectionHeading>
             <SectionContent>
-              <ListItems>
+              <List>
                 {projData.features.map((item, index) => (
                   <ListItem key={item + "- " + index}>{item}</ListItem>
                 ))}
-              </ListItems>
+              </List>
             </SectionContent>
           </Section>
         )}
@@ -110,14 +93,14 @@ class Projects extends React.Component {
               Code technologies used while working on this project
             </SectionSubeading>
             <SectionContent>
-              <ListItems>
+              <List>
                 {projData.technologies.map((item, index) => (
                   <ListItem key={item.name + "-" + index}>
                     <Link href={item.link}>{item.name}</Link> -{" "}
                     {item.description}
                   </ListItem>
                 ))}
-              </ListItems>
+              </List>
             </SectionContent>
           </Section>
         )}
@@ -128,18 +111,18 @@ class Projects extends React.Component {
           <Section>
             <SectionHeading>Resources</SectionHeading>
             <SectionContent>
-              <ListItems>
+              <List>
                 {projData.resources.map((item, index) => (
                   <ListItem key={item.name + "-" + index}>
                     {item.name}
                     <Link href={item.link}>{item.alias}</Link>
                   </ListItem>
                 ))}
-              </ListItems>
+              </List>
             </SectionContent>
           </Section>
         )}
-      </Wrapper>
+      </ContentWrapper>
     );
   }
 }
