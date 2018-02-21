@@ -1,6 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
-import { Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+function insertString(original, toInsert, pos) {
+  if (typeof pos == "undefined") {
+    pos = 0;
+  }
+  if (typeof toInsert == "undefined") {
+    toInsert = "";
+  }
+  return original.slice(0, pos) + toInsert + original.slice(pos);
+}
 
 const Wrapper = styled.li`
   flex-direction: column;
@@ -26,6 +36,13 @@ const Heading = styled.h2`
   border-width: 0 0 1px 0;
   border-style: solid;
   border-color: hsla(0, 0%, 0%, 0.2);
+
+  @media screen and (max-width: 1300px) {
+    ${Heading} {
+      font-size: 14px;
+      padding: 5px 0 5px 0;
+    }
+  }
 `;
 
 const Image = styled.img`
@@ -35,26 +52,31 @@ const Image = styled.img`
 class Thumnail extends React.Component {
   render() {
     const { locationUrl, heading, imageSrc } = this.props;
+
+    // Use Imgur API to send thumnail version
+    // of image via a thumnail suffix appended
+    // to end of the image id
+
+    // Define imgur thumnail suffix
+    const imgurThumnailSuffix = "h";
+    // position to append the thumnail suffix
+    const insertionPosition = imageSrc.length - 4;
+    // insert the suffix into 'imageSrc'
+    const thumnailSrc = insertString(
+      imageSrc,
+      imgurThumnailSuffix,
+      insertionPosition
+    );
+
     return (
       <Wrapper>
         <Link to={locationUrl}>
           <Heading>{heading}</Heading>
-          <Image src={imageSrc} alt={heading} />
+          <Image src={thumnailSrc} alt={heading} />
         </Link>
       </Wrapper>
     );
   }
 }
-
-// const Thumnail = ({ locationUrl, heading, imageSrc }) => {
-//   return (
-//     <Wrapper>
-//       <Link to={locationUrl}>
-//         <Heading>{heading}</Heading>
-//         <Image src={imageSrc} alt={heading} />
-//       </Link>
-//     </Wrapper>
-//   );
-// };
 
 export default Thumnail;
