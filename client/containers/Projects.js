@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import { Route, NavLink } from "react-router-dom";
 import styled from "styled-components";
-import ContentWrapper from "../components/ContentWrapper";
 import content from "../content";
+import ContentWrapper from "../components/ContentWrapper";
 import Thumnail from "./Thumnail";
 import FlipMove from "react-flip-move";
 
 // returns deduped array of tags from each project in 'content'
 function getTags(projects) {
   const allTags = projects
-    .map((item, index) => item.tags)
+    .map(item => item.tags)
     .reduce((prev, curr) => prev.concat(curr));
   return [...new Set(allTags)];
 }
@@ -19,7 +18,7 @@ function getThumnails(projects, projectNames, filter) {
     filter !== "show all"
       ? projects.filter(project => project.tags.includes(filter))
       : projects;
-  return filtered.map((item, index) => (
+  return filtered.map(item => (
     <Thumnail
       key={`project-${item.heading}`}
       locationUrl={`projects/${item.name}`}
@@ -34,29 +33,43 @@ const Thumnails = styled(FlipMove)`
   grid-template-columns: [thumb-col-1] 50% [thumb-col-2] 50% [thumb-col-3];
   grid-gap: 35px;
   width: 100%;
-  margin: 0 0 100px 0;
+
+  @media screen and (max-width: 1300px) {
+    ${Thumnails} {
+      grid-gap: 25px;
+      grid-template-columns: 100%;
+    }
+  }
 `;
 
 const TagsContainer = styled.ul`
   display: flex;
   flex-direction: row;
-  margin: 40px 0 0 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
 `;
 
 const Tag = styled.li`
   background: ${props =>
-    props.active ? props.theme.buttonActive : props.theme.brandColor};
+    props.active ? props.theme.textColor : props.theme.brandColor};
   box-shadow: 0 3px 0 0 ${props => props.theme.brandColorDark};
   margin: 0 10px 0 0;
-  padding: 5px 10px 5px 10px;
-  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
-  color: ${props => props.theme.textColor};
+  color: ${props =>
+    props.active ? props => props.theme.brandColor : props.theme.textColor};
+  transition: 200ms ease all;
 
-  ${Tag}:hover {
-    background: ${props => props.theme.buttonActive};
+  @media screen and (max-width: 1000px) {
+    ${Tag} {
+      font-size: 12px;
+      padding: 8px 15px 8px 15px;
+      margin: 0 5px 5px 0;
+    }
   }
 `;
 
@@ -64,6 +77,13 @@ const FilterMessage = styled.p`
   color: ${props => props.theme.textColor};
   font-size: 18px;
   margin: 40px 0 20px 0;
+
+  @media screen and (max-width: 1300px) {
+    ${FilterMessage} {
+      font-size: 15px;
+      margin: 20px 0 20px 0;
+    }
+  }
 `;
 
 class Projects extends Component {
@@ -75,11 +95,11 @@ class Projects extends Component {
   }
 
   changeFilter = val => {
-    const { filter } = this.state;
     this.setState({
       filter: val
     });
   };
+  
   render() {
     const { filter } = this.state;
     const projectNames = Object.keys(content);
@@ -116,8 +136,6 @@ class Projects extends Component {
         <Thumnails typeName="ul" duration={200} easing="ease-out">
           {thumnails}
         </Thumnails>
-
-        {/* <Thumnails>{thumnails}</Thumnails> */}
       </ContentWrapper>
     );
   }
