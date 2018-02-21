@@ -2,46 +2,32 @@ import React from "react";
 import styled from "styled-components";
 import ContentWrapper from "../components/ContentWrapper";
 
-const Content = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  color: ${props => props.theme.textColor};
-`;
-
 const Heading = styled.h1`
-  margin: 50px 0 0 0;
   font-size: 24px;
   color: ${props => props.theme.textColor};
-`;
 
-const EmailLink = styled.a`
-  margin: 50px 0 50px 0;
-  font-size: 22px;
-  padding: 20px 30px 20px 30px;
-  border: none;
-  border-radius: 3px;
-  color: ${props => props.theme.textColor};
-  background: ${props => props.theme.brandColor};
-  font-family: ${props => props.theme.font};
-  font-weight: bold;
-  box-shadow: 0 3px 0 0 ${props => props.theme.brandColorDark};
-  cursor: pointer;
-  transition: 200ms ease all;
-  text-decoration: none;
-
-  ${EmailLink}:hover {
-    background: ${props => props.theme.buttonActive};
+  @media screen and (max-width: 1000px) {
+    ${Heading} {
+      font-size: 19px;
+    }
   }
 `;
 
-const MediaLinks = styled.div`
+const LinksContainer = styled.div`
+  width: 100%;
+  margin: 20px 0 0 0;
   display: flex;
+
+  @media screen and (max-width: 1000px) {
+    ${LinksContainer} {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `;
 
-const SocialLink = styled.a`
+const Link = styled.a`
   font-size: 22px;
   padding: 15px 25px 15px 25px;
   border: none;
@@ -50,64 +36,86 @@ const SocialLink = styled.a`
   background: ${props => props.primary};
   font-family: ${props => props.theme.font};
   font-weight: bold;
-  box-shadow: 0 3px 0 0 ${props => props.secondary};
+  box-shadow: 0 4px 0 0 ${props => props.secondary};
   cursor: pointer;
   transition: 200ms ease all;
   text-decoration: none;
   text-transform: uppercase;
   display: flex;
   flex-direction: row;
-  align-items: center;margin: 0 0 5px 0;
+  align-items: center;
+  margin: 0 0 5px 0;
   margin: 0 10px 0 0;
 
-  ${EmailLink}:hover {
-    background: ${props => props.theme.buttonActive};
+  ${Link}:hover {
+    transform: scale(1.05, 1.05);
+  }
+
+  @media screen and (max-width: 1000px) {
+    ${Link} {
+      justify-content: center;
+      font-size: 17px;
+      padding: 10px 20px 10px 20px;
+      margin: 0 0 10px 0;
+      width: 30%;
+    }
   }
 `;
 
 const LinkName = styled.p`
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
   padding: 0 0 0 5px;
+
+  @media screen and (max-width: 1000px) {
+    ${LinkName} {
+      font-size: 13px;
+    }
+  }
 `;
 
 const Contact = () => {
   return (
     <ContentWrapper>
-      <Content>
-        <Heading>
-          If you'd like to get in touch regarding a project, to make an enquiry
-          or simply to chat, email me at tptrinca@gmail.com or click the button
-          bellow. Alternatively, find me via the social media links below.
-        </Heading>
-        <EmailLink href="mailto:tptrinca@gmail.com">Send me an email</EmailLink>
-        <MediaLinks>
-          <SocialLink
-            textColor={`hsl(0, 0%, 90%)`}
-            primary={`#505050`}
-            secondary={`#383838`}
-            href="LINK"
-          >
-            <i className="fab fa-github" /> <LinkName>Github</LinkName>
-          </SocialLink>
-          <SocialLink
-            textColor={`hsl(0, 0%, 90%)`}
-            primary={`#19AAEA`}
-            secondary={`#106C93`}
-            href="LINK"
-          >
-            <i className="fab fa-twitter" /> <LinkName>Twitter</LinkName>
-          </SocialLink>
-          <SocialLink
-            textColor={`hsl(0, 0%, 90%)`}
-            primary={`#1475B1`}
-            secondary={`#0A405D`}
-            href="LINK"
-          >
-            <i className="fab fa-linkedin-in" /> <LinkName>Linked In</LinkName>
-          </SocialLink>
-        </MediaLinks>
-      </Content>
+      <Heading>
+        If you would like to get in touch regarding a project, to make an enquiry or
+        simply to chat, email me at tptrinca@gmail.com or click the button
+        bellow. Alternatively, find me via the social media links below.
+      </Heading>
+      <LinksContainer>
+        <Link
+          textColor={`hsl(0, 0%, 90%)`}
+          primary={`#E55757`}
+          secondary={`#C33232`}
+          href="mailto:tptrinca@gmail.com"
+        >
+          <i className="fas fa-envelope" /> <LinkName>Email Me</LinkName>
+        </Link>
+        <Link
+          textColor={`hsl(0, 0%, 90%)`}
+          primary={`#505050`}
+          secondary={`#383838`}
+          href="https://github.com/plexey"
+        >
+          <i className="fab fa-github" /> <LinkName>Github</LinkName>
+        </Link>
+        <Link
+          textColor={`hsl(0, 0%, 90%)`}
+          primary={`#19AAEA`}
+          secondary={`#106C93`}
+          href="LINK"
+        >
+          <i className="fab fa-twitter" /> <LinkName>Twitter</LinkName>
+        </Link>
+        <Link
+          textColor={`hsl(0, 0%, 90%)`}
+          primary={`#1475B1`}
+          secondary={`#0A405D`}
+          href="LINK"
+        >
+          <i className="fab fa-linkedin-in" /> <LinkName>Linked In</LinkName>
+        </Link>
+      </LinksContainer>
     </ContentWrapper>
   );
 };
