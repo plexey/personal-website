@@ -11,7 +11,8 @@ module.exports = {
     loaders: [
       { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ },
       { test: /\.jsx$/, loader: "babel-loader", exclude: /node_modules/ },
-      { test: /\.css$/, loaders: ['style-loader', 'css-loader']}
+      { test: /\.css$/, loaders: ['style-loader', 'css-loader']},
+      {test: /\.(jpe?g|png|gif|ico)$/i, loader: 'file?name=[name].[ext]'},
     ]
   },
   devServer: {
@@ -23,8 +24,9 @@ module.exports = {
       title: "Producton",
       template: "./client/index.html",
       filename: "index.html",
-      inject: "body"
-    })
+      inject: "body",
+      favicon: 'client/favicon.ico'
+    }),
   ],
   output: {
     filename: "index_bundle.js",
