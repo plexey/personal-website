@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const Heading = styled.h1`
@@ -9,6 +8,12 @@ const Heading = styled.h1`
   font-family: ${props => props.theme.headingFont};
   text-decoration: underline;
   white-space: nowrap;
+
+    @media screen and (max-width: 1300px) {
+    ${Heading} {
+      font-size: 17px;
+    }
+  }
 `;
 
 export default Heading
