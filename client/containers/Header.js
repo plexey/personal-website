@@ -2,12 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Heading from '../components/Heading';
 import NavLink from '../components/NavLink';
-import DropDown from './DropDown';
-import content from '../content';
-import { Route } from 'react-router'
 
 const HeaderContainer = styled.header`
   height: 60px;
+  max-width: 100%;
   width: 100%;
   position: fixed;
   top: 0;
@@ -15,6 +13,7 @@ const HeaderContainer = styled.header`
   /* Define internal grid columns */
   grid-template-columns: ${props => props.theme.deskGridTempCol};
   background: ${props => props.theme.brandColor};
+  /* background: hsla(0, 50%, 50%, .8); */
   border-style: solid;
   border-width: 0 0 2px 0;
   border-color: hsl(0, 0%, 20%);
@@ -29,6 +28,7 @@ const HeaderContainer = styled.header`
 
   @media screen and (max-width: 1000px) {
     ${HeaderContainer} {
+      height: 50px;
       grid-template-columns: ${props => props.theme.phoneGridTempCol};
     }
   }
@@ -57,6 +57,12 @@ const ExternalLinks = styled.div`
   align-items: center;
   height: 100%;
   flex-grow: 2;
+
+    @media screen and (max-width: 1300px) {
+    ${ExternalLink} {
+      display: none;
+    }
+  }
 `;
 
 const ExternalLink = styled.a`
