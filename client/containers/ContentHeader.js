@@ -57,6 +57,12 @@ const Heading = styled.h2`
   align-items: flex-end;
   font-size: 35px;
   font-weight: bold;
+
+  @media screen and (max-width: 1000px) {
+    ${Heading} {
+      font-size: 19px;
+    }
+  }
 `;
 
 const Subheading = styled.h3`
@@ -67,6 +73,12 @@ const Subheading = styled.h3`
   align-items: center;
   font-size: 20px;
   color: hsl(0, 0%, 90%);
+
+  @media screen and (max-width: 1000px) {
+    ${Subheading} {
+      font-size: 16px;
+    }
+  }
 `;
 
 const NavLinks = styled.nav`
@@ -90,6 +102,13 @@ const Link = styled.a`
 
   ${Link}:hover {
     transform: scale(1.05, 1.05);
+  }
+
+  @media screen and (max-width: 1000px) {
+    ${Link} {
+      font-size: 15px;
+      padding: 8px 15px 8px 15px;
+    }
   }
 `;
 
