@@ -1,22 +1,22 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import styled from "styled-components";
 import ImageGallery from "react-image-gallery";
-import ContentWrapper from '../components/ContentWrapper';
+import ContentWrapper from "../components/ContentWrapper";
 import Section from "../components/Section";
 import SectionContent from "../components/SectionContent";
 import Paragraph from "../components/Paragraph";
 import SectionHeading from "../components/SectionHeading";
 import SectionSubeading from "../components/SectionSubeading";
 import ListItem from "../components/ListItem";
-import content from "../content";
+import projects from "../data";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 const GalleryWrapper = styled.div`
-  box-shadow: 0 0 20px 0 hsla(0, 0%, 0%, 0.1);
+  box-shadow: 0 0 20px 0 hsla(0, 0%, 0%, 0.2);
 `;
 
-const List = styled.ul`
-`;
+const List = styled.ul``;
 
 const Link = styled.a`
   font-weight: bold;
@@ -42,20 +42,31 @@ const Image = styled.img`
   }
 `;
 
-class Projects extends React.Component {
+class Project extends React.Component {
   render() {
     const { match } = this.props;
-    const projData = content[match.params.project];
+    const data = projects[match.params.project];
+
+    const formattedDescription = data.description.split('\n').map((item, key) => {
+      return (
+        <span key={key}>
+          {item}
+          <br/>
+          <br/>
+        </span>
+      )
+    })
+
     return (
       <ContentWrapper>
         {/* Images */}
 
-        {projData.images !== undefined && (
+        {data.images !== undefined && (
           <GalleryWrapper>
             <ImageGallery
               showThumbnails={false}
               showBullets={true}
-              items={projData.images}
+              items={data.images}
               showFullscreenButton={false}
               showPlayButton={false}
             />
@@ -65,18 +76,18 @@ class Projects extends React.Component {
         <Section>
           <SectionHeading>About this project</SectionHeading>
           <SectionContent>
-            <Paragraph>{projData.description}</Paragraph>
+            <Paragraph>{formattedDescription}</Paragraph>
           </SectionContent>
         </Section>
 
         {/* Features */}
 
-        {projData.features !== undefined && (
+        {data.features !== undefined && (
           <Section>
             <SectionHeading>Features</SectionHeading>
             <SectionContent>
               <List>
-                {projData.features.map((item, index) => (
+                {data.features.map((item, index) => (
                   <ListItem key={item + "- " + index}>{item}</ListItem>
                 ))}
               </List>
@@ -86,7 +97,7 @@ class Projects extends React.Component {
 
         {/* Technologies */}
 
-        {projData.technologies !== undefined && (
+        {data.technologies !== undefined && (
           <Section>
             <SectionHeading>Technical Sheet</SectionHeading>
             <SectionSubeading>
@@ -94,7 +105,7 @@ class Projects extends React.Component {
             </SectionSubeading>
             <SectionContent>
               <List>
-                {projData.technologies.map((item, index) => (
+                {data.technologies.map((item, index) => (
                   <ListItem key={item.name + "-" + index}>
                     <Link href={item.link}>{item.name}</Link> -{" "}
                     {item.description}
@@ -107,12 +118,12 @@ class Projects extends React.Component {
 
         {/* Resources */}
 
-        {projData.resources !== undefined && (
+        {data.resources !== undefined && (
           <Section>
             <SectionHeading>Resources</SectionHeading>
             <SectionContent>
               <List>
-                {projData.resources.map((item, index) => (
+                {data.resources.map((item, index) => (
                   <ListItem key={item.name + "-" + index}>
                     {item.name}
                     <Link href={item.link}>{item.alias}</Link>
@@ -127,4 +138,8 @@ class Projects extends React.Component {
   }
 }
 
-export default Projects;
+Project.propTypes = {
+  match: PropTypes.object.isRequired
+};
+
+export default Project;
