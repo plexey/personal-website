@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import styled from "styled-components";
 import { Route } from "react-router-dom";
-import content from "../content";
+import projects from "../data";
 
 const Wrapper = styled.div`
   display: grid;
@@ -113,7 +114,7 @@ const Link = styled.a`
 `;
 
 const ProjectContentHeader = props => {
-  const projData = content[props.match.params.project];
+  const projData = projects[props.match.params.project];
   const linkNames = Object.keys(projData.links);
   const linkPaths = Object.values(projData.links);
   return (
@@ -169,5 +170,9 @@ const ContentHeader = () => (
     />
   </Wrapper>
 );
+
+ProjectContentHeader.propTypes = {
+  match: PropTypes.object.isRequired
+};
 
 export default ContentHeader;
