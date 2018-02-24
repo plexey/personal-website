@@ -1,17 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Paragraph from "../components/Paragraph";
 import ContentWrapper from "../components/ContentWrapper";
-
-const Heading = styled.h1`
-  font-size: 24px;
-  color: ${props => props.theme.textColor};
-
-  @media screen and (max-width: 1000px) {
-    ${Heading} {
-      font-size: 19px;
-    }
-  }
-`;
 
 const LinksContainer = styled.div`
   width: 100%;
@@ -28,8 +18,8 @@ const LinksContainer = styled.div`
 `;
 
 const Link = styled.a`
-  font-size: 22px;
-  padding: 15px 25px 15px 25px;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
   border: none;
   border-radius: 4px;
   color: ${props => props.textColor};
@@ -63,9 +53,9 @@ const Link = styled.a`
 `;
 
 const LinkName = styled.p`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
-  padding: 0 0 0 5px;
+  padding: 0 0 0 10px;
 
   @media screen and (max-width: 1000px) {
     ${LinkName} {
@@ -77,11 +67,11 @@ const LinkName = styled.p`
 const Contact = () => {
   return (
     <ContentWrapper>
-      <Heading>
+      <Paragraph>
         If you would like to get in touch regarding a project, to make an enquiry or
         simply to chat, email me at tptrinca@gmail.com or click the button
         bellow. Alternatively, find me via the social media links below.
-      </Heading>
+      </Paragraph>
       <LinksContainer>
         <Link
           textColor={`hsl(0, 0%, 90%)`}
@@ -103,7 +93,7 @@ const Contact = () => {
           textColor={`hsl(0, 0%, 90%)`}
           primary={`#19AAEA`}
           secondary={`#106C93`}
-          href="LINK"
+          href="https://twitter.com/tom_trinca"
         >
           <i className="fab fa-twitter" /> <LinkName>Twitter</LinkName>
         </Link>
