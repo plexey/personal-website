@@ -21,7 +21,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
-      title: "Producton",
+      title: "Production",
       template: "./client/index.html",
       filename: "index.html",
       inject: "body",
