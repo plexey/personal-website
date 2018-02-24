@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import Heading from '../components/Heading';
-import NavLink from '../components/NavLink';
+import React from "react";
+import styled from "styled-components";
+import Heading from "../components/Heading";
+import NavLink from "../components/NavLink";
+import * as routes from "../constants/routes";
 
 const HeaderContainer = styled.header`
   height: 60px;
@@ -13,7 +14,6 @@ const HeaderContainer = styled.header`
   /* Define internal grid columns */
   grid-template-columns: ${props => props.theme.deskGridTempCol};
   background: ${props => props.theme.brandColor};
-  /* background: hsla(0, 50%, 50%, .8); */
   border-style: solid;
   border-width: 0 0 2px 0;
   border-color: hsl(0, 0%, 20%);
@@ -41,7 +41,7 @@ const HeaderContent = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-`
+`;
 
 const NavLinks = styled.div`
   display: flex;
@@ -58,7 +58,7 @@ const ExternalLinks = styled.div`
   height: 100%;
   flex-grow: 2;
 
-    @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1300px) {
     ${ExternalLink} {
       display: none;
     }
@@ -77,9 +77,9 @@ const ExternalLink = styled.a`
   transition: 200ms ease all;
 
   ${ExternalLink}:hover {
-    transform: scale(1.2,1.2);
+    transform: scale(1.2, 1.2);
   }
-`
+`;
 
 export default class Header extends React.Component {
   render() {
@@ -88,20 +88,25 @@ export default class Header extends React.Component {
         <HeaderContent>
           <Heading>Tom Trinca</Heading>
           <NavLinks>
-            <NavLink exact to="/">Home</NavLink>
-            <NavLink exact to="/Projects">Projects</NavLink>
-            {/* <DropDown title={"Projects"} listItems={content} /> */}
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink exact to={routes.HOME}>
+              Home
+            </NavLink>
+            <NavLink to={routes.PROJECTS}>
+              Projects
+            </NavLink>
+            <NavLink exact to={routes.CONTACT}>
+              Contact
+            </NavLink>
           </NavLinks>
           <ExternalLinks>
             <ExternalLink href="https://github.com/plexey">
-              <i className="fab fa-github-alt"></i>
+              <i className="fab fa-github-alt" />
             </ExternalLink>
             <ExternalLink href="https://codepen.io/Trinca/pens/popular/">
-              <i className="fab fa-codepen"></i>
+              <i className="fab fa-codepen" />
             </ExternalLink>
-            <ExternalLink href="https://github.com/plexey">
-              <i className="fab fa-twitter"></i>
+            <ExternalLink href="https://twitter.com/tom_trinca">
+              <i className="fab fa-twitter" />
             </ExternalLink>
           </ExternalLinks>
         </HeaderContent>
