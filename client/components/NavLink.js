@@ -16,7 +16,7 @@ const Link = styled(NavLink).attrs({
   padding: 0 15px 0 15px;
   font-family: ${props => props.theme.font};
   font-weight: bold;
-  transition: 200ms ease all; 
+  transition: 200ms ease all;
 
   &.${activeClassName} {
     color: ${props => props.theme.brandColor};
@@ -31,6 +31,7 @@ const Link = styled(NavLink).attrs({
   @media screen and (max-width: 1300px) {
     ${Link} {
       font-size: 14px;
+    }
   }
 `;
 
