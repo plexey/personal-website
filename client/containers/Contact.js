@@ -101,7 +101,7 @@ const Contact = () => {
           textColor={`hsl(0, 0%, 90%)`}
           primary={`#1475B1`}
           secondary={`#0A405D`}
-          href="LINK"
+          href="https://linkedin.com/in/tom-trinca-3365b815a"
         >
           <i className="fab fa-linkedin-in" /> <LinkName>Linked In</LinkName>
         </Link>
