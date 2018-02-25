@@ -130,7 +130,7 @@ class Projects extends Component {
           {tags}
         </TagsContainer>
         <FilterMessage>
-          Showing {thumbnails.length} projects filtered by '{filter}'
+          Showing {thumbnails.length} project{thumbnails.length > 1 ? 's' : ''} filtered by {`'${filter}'`}
         </FilterMessage>
 
         <Thumbnails typeName="ul" duration={200} easing="ease-out">
