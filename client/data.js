@@ -1,3 +1,39 @@
+export const about = {
+  description: `I am a Web Developer based in Melbourne, Australia. I enjoy
+  designing and building everything, from small web components to
+  large scale interactive apps. I have a varied background with a
+  Diploma of Website Development, a Bachelor’s degree in General Arts
+  & Visual Arts and a Masters degree in Arts Management (with
+  Distinction). These qualifications have provided me with diverse
+  skill set including but not limited to programming, design and
+  project management. Check out my recent work in the Projects section.`,
+  skills: [
+    {
+      name: "Languages",
+      items: ["JavaScript", "Java", "C#", "HTML", "CSS", "SQL"]
+    },
+    { name: "Frameworks", items: ["React", ".NET MVC"] },
+    { name: "State Management", items: ["Redux", "Mobx"] },
+    { name: "Databasing", items: ["SQL", "Firebase", "mongoDB"] },
+    {
+      name: "Dev Tools",
+      items: [
+        "Node JS",
+        "Webpack",
+        "Git",
+        "Github",
+        "MySQL",
+        "Jest",
+        "Travis CI",
+        "Husky",
+        "Semantic Release",
+        "VS Code",
+        "Atom Editor"
+      ]
+    }
+  ]
+};
+
 /* 
 const example_project = {
   projectName: {
@@ -201,7 +237,7 @@ export const projects = {
     heading: "React Redux Todo",
     subheading: "A todo app built with React & Redux",
     description:
-      "A simple todo app built with React & Redux. This app features animated list items using the react-flip-move package. This application adheres to the Ducks: Redux Reducer Bundles philosophy.",
+      "A simple todo app built with React & Redux featuring animated list items using the react-flip-move package. This application adheres to the Ducks: Redux Reducer Bundles philosophy.",
     images: [
       { original: "https://i.imgur.com/lTugTvJ.png", thumbnail: "" },
       { original: "https://i.imgur.com/oU4cqW3.png", thumbnail: "" },
@@ -452,38 +488,4 @@ export const projects = {
     ],
     tags: ["css", "react", "javascript"]
   }
-};
-
-export const about = {
-  description: `I am a Web Developer based in Melbourne, Australia. I enjoy
-  designing and building everything, from small web components to
-  large scale interactive apps. I have a varied background with a
-  Diploma of Website Development, a Bachelor’s degree in General Arts
-  & Visual Arts and a Masters degree in Arts Management (with
-  Distinction). These qualifications have provided me with diverse
-  skill set including but not limited to programming, design and
-  project management. Check out my recent work in the Projects section`,
-  skills: [
-    {
-      name: "Languages",
-      items: ["JavaScript", "Java", "C#", "HTML", "CSS", "SQL"]
-    },
-    { name: "Frameworks", items: ["React", ".NET MVC"] },
-    { name: "State Management", items: ["Redux", "Mobx"] },
-    { name: "Databasing", items: ["SQL", "Firebase", "mongoDB"] },
-    {
-      name: "Dev Tools",
-      items: [
-        "Webpack",
-        "Node JS",
-        "Git",
-        "Github",
-        "Travis CI",
-        "Husky",
-        "Semantic Release",
-        "Jest",
-        "Atom Editor"
-      ]
-    }
-  ]
 };
