@@ -10,24 +10,38 @@ import { about } from "../data";
 
 const List = styled.ul``;
 
+const PortraitWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+`;
+
 const Portrait = styled.img`
-  width: 200px;
+  height: 220px;
+  width: 220px;
+  filter: grayscale(100%);
   border-radius: 50%;
   border-style: solid;
   border-color: hsl(0, 0%, 20%);
-  border-width: 4px;
-  margin: 20px;
+  border-width: 3px;
+  margin: 20px 0 0 0;
+  /* box-shadow: 0 0 20px 0 black; */
 `;
 
 const Heading = styled.h2`
   color: ${props => props.theme.textColor};
   font-size: 25px;
   font-weight: bold;
+  width: 100%;
+  text-align: center;
 `;
 
 const Subheading = styled.h3`
   color: hsl(0, 0%, 35%);
   font-size: 20px;
+  width: 100%;
+  text-align: center;
 `;
 
 const Home = () => {
@@ -35,7 +49,11 @@ const Home = () => {
     <ContentWrapper>
       <Heading>Tom Trinca - Web Developer & Designer</Heading>
       <Subheading>Melbourne, Australia</Subheading>
-      <Portrait src="https://i.imgur.com/SquGERT.jpg" alt="mugshot" />
+
+      <PortraitWrapper>
+        <Portrait src="https://i.imgur.com/KniM0NPm.jpg" alt="mugshot" />
+      </PortraitWrapper>
+
       <Section>
         <SectionContent>
           <Paragraph>{about.description}</Paragraph>
