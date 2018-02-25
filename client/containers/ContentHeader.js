@@ -1,8 +1,8 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Route } from "react-router-dom";
-import projects from "../data";
+import { projects } from "../data";
 
 const Wrapper = styled.div`
   display: grid;
@@ -24,11 +24,6 @@ const Wrapper = styled.div`
       grid-template-columns: ${props => props.theme.phoneGridTempCol};
     }
   }
-`;
-
-const NavArrow = styled.div`
-  color: white;
-  font-size: 30px;
 `;
 
 const Content = styled.div`
@@ -160,7 +155,7 @@ const ContentHeader = () => (
 
     <Route
       exact
-      path="/Contact"
+      path="/contact"
       render={() => (
         <Content>
           <Heading>Contact</Heading>
