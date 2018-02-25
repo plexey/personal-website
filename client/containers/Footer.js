@@ -7,8 +7,9 @@ const FooterContainer = styled.footer`
   grid-row-end: main5;
   /* Define internal grid columns */
   grid-template-columns: ${props => props.theme.deskGridTempCol};
-  background: hsl(0, 0%, 60%);
+  background: hsl(0, 0%, 30%);
   font-family: ${props => props.theme.font};
+  box-shadow: inset 0 5px 20px 0 hsla(0, 0%, 0%, .2);
 
   @media screen and (max-width: 1300px) {
     ${FooterContainer} {
@@ -34,7 +35,7 @@ const FooterContent = styled.div`
 `;
 
 const Heading = styled.h1`
-  color: hsl(0, 0%, 40%);
+  color: hsl(0, 0%, 60%);
   font-weight: bold;
 
   @media screen and (max-width: 1000px) {
@@ -50,7 +51,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <Heading>
-          Copyright &copy; 2018 Thomas Trinca - Melbourne based Web Developer
+          Copyright &copy; 2018 Thomas Trinca
         </Heading>
       </FooterContent>
     </FooterContainer>
