@@ -10,9 +10,13 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ },
-      { test: /\.jsx$/, loader: "babel-loader", exclude: /node_modules/ },
-      { test: /\.css$/, loaders: ['style-loader', 'css-loader']},
-      {test: /\.(jpe?g|png|gif|ico)$/i, loader: 'file?name=[name].[ext]'},
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['eslint-loader']
+      },
+      { test: /\.css$/, loaders: ["style-loader", "css-loader"] },
+      { test: /\.(jpe?g|png|gif|ico)$/i, loader: "file?name=[name].[ext]" }
     ]
   },
   devServer: {
@@ -25,8 +29,8 @@ module.exports = {
       template: "./client/index.html",
       filename: "index.html",
       inject: "body",
-      favicon: 'client/favicon.ico'
-    }),
+      favicon: "client/favicon.ico"
+    })
   ],
   output: {
     filename: "index_bundle.js",
