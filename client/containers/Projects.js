@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import projects from '../data';
+import { projects } from "../data";
 import ContentWrapper from "../components/ContentWrapper";
 import Thumbnail from "./Thumbnail";
 import FlipMove from "react-flip-move";
@@ -99,7 +99,7 @@ class Projects extends Component {
       filter: val
     });
   };
-  
+
   render() {
     const { filter } = this.state;
     const projectNames = Object.keys(projects);
