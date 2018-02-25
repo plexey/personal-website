@@ -1,4 +1,5 @@
-const example = {
+/* 
+const example_project = {
   projectName: {
     name: "projectname",
     heading: "PROJ_NAME",
@@ -20,8 +21,9 @@ const example = {
     tags: ["tag_one", "tag_one"]
   }
 };
+*/
 
-const projects = {
+export const projects = {
   palettetown: {
     name: "palettetown",
     heading: "Palette Town",
@@ -88,6 +90,18 @@ const projects = {
         name: "font awesome",
         description: "Popular vector icons and logos library",
         link: "https://fontawesome.com/"
+      },
+      {
+        name: "webpack",
+        description:
+          "A bundler for javascript and friends. Packs many modules into a few bundled assets",
+        link: "https://github.com/webpack/webpack"
+      },
+      {
+        name: "travis ci",
+        description:
+          "Travis CI is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub.",
+        link: "https://travis-ci.org/"
       }
     ],
     links: {
@@ -121,8 +135,8 @@ const projects = {
     subheading:
       "A React module for applying a dynamic, animated depth of field effect to a set of elements",
     description: `This module is a React component designed to apply an adjustable, animatable depth of field effect to a set of provided children. Amongst other props, it takes a set of children and a designated focus point. The focus point is the index of the child element to be in focus. 
-      From the designed focus point, the module applies a depth of field effect to its children centered on a given child by programatically applying CSS blur filters of increasing strengths to each of its children above and below the focus point. 
-      Changing the focus point to a different child index will initiate an animated transition from the orignal index to the new index, simulating a camera focus pull. The module also accepts a provided blur increment as well as an animation time prop. The former controls the strength of depth of field effect while the latter controls the time it takes for the focus point to transition from one child to an adjacent child.`,
+      From the designed focus point, the module applies a depth of field effect to its children centered on a given child by programmatically applying CSS blur filters of increasing strengths to each of its children above and below the focus point. 
+      Changing the focus point to a different child index will initiate an animated transition from the original index to the new index, simulating a camera focus pull. The module also accepts a provided blur increment as well as an animation time prop. The former controls the strength of depth of field effect while the latter controls the time it takes for the focus point to transition from one child to an adjacent child.`,
     images: [
       { original: "https://i.imgur.com/CzyYmg4.png", thumbnail: "" },
       { original: "https://i.imgur.com/o4cFNqy.png", thumbnail: "" },
@@ -133,6 +147,36 @@ const projects = {
       npm: "https://www.npmjs.com/package/react-depth-of-field",
       demo: "http://react-depth-of-field.surge.sh/"
     },
+    technologies: [
+      {
+        name: "react",
+        description: "A JavaScript library for building user interfaces",
+        link: "https://reactjs.org/"
+      },
+      {
+        name: "webpack",
+        description:
+          "A bundler for javascript and friends. Packs many modules into a few bundled assets",
+        link: "https://github.com/webpack/webpack"
+      },
+      {
+        name: "husky",
+        description: "Git hooks made easy",
+        link: "https://github.com/typicode/husky"
+      },
+      {
+        name: "semantic-release",
+        description:
+          "Fully automated version management and package publishing",
+        link: "https://github.com/semantic-release/semantic-release"
+      },
+      {
+        name: "travis ci",
+        description:
+          "Travis CI is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub.",
+        link: "https://travis-ci.org/"
+      }
+    ],
     resources: [
       {
         name: "This project is online at ",
@@ -150,7 +194,7 @@ const projects = {
         link: "https://github.com/plexey/react-depth-of-field"
       }
     ],
-    tags: ["javascript", "react", "husyky", "travis ci"]
+    tags: ["javascript", "react", "husky", "travis ci"]
   },
   reactreduxtodo: {
     name: "reactreduxtodo",
@@ -190,6 +234,18 @@ const projects = {
         name: "font awesome",
         description: "Popular vector icons and logos library",
         link: "https://fontawesome.com/"
+      },
+      {
+        name: "webpack",
+        description:
+          "A bundler for javascript and friends. Packs many modules into a few bundled assets",
+        link: "https://github.com/webpack/webpack"
+      },
+      {
+        name: "travis ci",
+        description:
+          "Travis CI is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub.",
+        link: "https://travis-ci.org/"
       }
     ],
     links: {
@@ -243,6 +299,18 @@ const projects = {
         name: "firebase",
         description: "a mobile and web application development platform ",
         link: "https://firebase.google.com/"
+      },
+      {
+        name: "webpack",
+        description:
+          "A bundler for javascript and friends. Packs many modules into a few bundled assets",
+        link: "https://github.com/webpack/webpack"
+      },
+      {
+        name: "travis ci",
+        description:
+          "Travis CI is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub.",
+        link: "https://travis-ci.org/"
       },
       {
         name: "font awesome",
@@ -386,4 +454,36 @@ const projects = {
   }
 };
 
-export default projects;
+export const about = {
+  description: `I am a Web Developer based in Melbourne, Australia. I enjoy
+  designing and building everything, from small web components to
+  large scale interactive apps. I have a varied background with a
+  Diploma of Website Development, a Bachelor’s degree in General Arts
+  & Visual Arts and a Masters degree in Arts Management (with
+  Distinction). These qualifications have provided me with diverse
+  skill set including but not limited to programming, design and
+  project management. Check out my recent work in the Projects section`,
+  skills: [
+    {
+      name: "Languages",
+      items: ["JavaScript", "Java", "C#", "HTML", "CSS", "SQL"]
+    },
+    { name: "Frameworks", items: ["React", ".NET MVC"] },
+    { name: "State Management", items: ["Redux", "Mobx"] },
+    { name: "Databasing", items: ["SQL", "Firebase", "mongoDB"] },
+    {
+      name: "Dev Tools",
+      items: [
+        "Webpack",
+        "Node JS",
+        "Git",
+        "Github",
+        "Travis CI",
+        "Husky",
+        "Semantic Release",
+        "Jest",
+        "Atom Editor"
+      ]
+    }
+  ]
+};
