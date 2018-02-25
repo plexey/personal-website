@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import ImageGallery from "react-image-gallery";
 import ContentWrapper from "../components/ContentWrapper";
@@ -9,7 +9,7 @@ import Paragraph from "../components/Paragraph";
 import SectionHeading from "../components/SectionHeading";
 import SectionSubeading from "../components/SectionSubeading";
 import ListItem from "../components/ListItem";
-import projects from "../data";
+import { projects } from "../data";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 const GalleryWrapper = styled.div`
@@ -47,15 +47,17 @@ class Project extends React.Component {
     const { match } = this.props;
     const data = projects[match.params.project];
 
-    const formattedDescription = data.description.split('\n').map((item, key) => {
-      return (
-        <span key={key}>
-          {item}
-          <br/>
-          <br/>
-        </span>
-      )
-    })
+    const formattedDescription = data.description
+      .split("\n")
+      .map((item, key) => {
+        return (
+          <span key={key}>
+            {item}
+            <br />
+            <br />
+          </span>
+        );
+      });
 
     return (
       <ContentWrapper>
