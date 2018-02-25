@@ -7,7 +7,7 @@ const FooterContainer = styled.footer`
   grid-row-end: main5;
   /* Define internal grid columns */
   grid-template-columns: ${props => props.theme.deskGridTempCol};
-  background: hsl(0, 0%, 80%);
+  background: hsl(0, 0%, 60%);
   font-family: ${props => props.theme.font};
 
   @media screen and (max-width: 1300px) {
@@ -34,7 +34,7 @@ const FooterContent = styled.div`
 `;
 
 const Heading = styled.h1`
-  color: hsl(0, 0%, 50%);
+  color: hsl(0, 0%, 40%);
   font-weight: bold;
 
   @media screen and (max-width: 1000px) {
