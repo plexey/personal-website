@@ -17,13 +17,6 @@ const Wrapper = styled.li`
   display: flex;
   flex-direction: column;
   box-shadow: 5px 5px 15px 0 hsla(0, 0%, 0%, 0.4);
-  /* transition: 200ms ease transform; */
-
-  @media screen and (min-width: 1000px) {
-    ${Wrapper}:hover {
-      /* transform: scale(1.05, 1.05); */
-    }
-  }
 `;
 
 const Link = styled(NavLink)`
