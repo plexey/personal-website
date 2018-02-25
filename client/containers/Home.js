@@ -1,7 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import Paragraph from '../components/Paragraph';
+import Paragraph from "../components/Paragraph";
 import ContentWrapper from "../components/ContentWrapper";
+import Section from "../components/Section";
+import SectionContent from "../components/SectionContent";
+import SectionHeading from "../components/SectionHeading";
+import ListItem from "../components/ListItem";
+import { about } from "../data";
+
+const List = styled.ul``;
 
 const Portrait = styled.img`
   width: 200px;
@@ -26,29 +33,25 @@ const Subheading = styled.h3`
 const Home = () => {
   return (
     <ContentWrapper>
-      <Heading>Tom Trinca - Web Developer</Heading>
+      <Heading>Tom Trinca - Web Developer & Designer</Heading>
       <Subheading>Melbourne, Australia</Subheading>
       <Portrait src="https://i.imgur.com/SquGERT.jpg" alt="mugshot" />
-      <Paragraph>
-        I am a Web Developer based in Melbourne, Australia. I have a varied
-        background with a Diploma of Website Development, a Bachelor’s degree in
-        General Arts & Visual Arts as well as a Masters degree in Arts
-        Management (with Distinction). These qualifications have provided me
-        with diverse skill set including but not limited to programming, design
-        and project management.
-      </Paragraph>
-      <Paragraph>
-        I have worked on a multitude of web projects, designing and building
-        responsive and elegant user interfaces and utilities using cutting edge
-        technologies. During my Visual Arts degree I acquired a keen eye for
-        architecture, and design.
-      </Paragraph>
-      <Paragraph>
-        I am proficient with the following languages: JavaScript, HTML, CSS,
-        Java, Python, C#, and SQL. I am also proficient with the following
-        frameworks: React, Vue, and ASP.NET. I have extensive experience with
-        the following state management tools: Redux and Mobx
-      </Paragraph>
+      <Section>
+        <SectionContent>
+          <Paragraph>{about.description}</Paragraph>
+        </SectionContent>
+      </Section>
+
+      {about.skills.map((skill, index) => (
+        <Section key={`${index}-${skill.name}`}>
+          <SectionHeading>{skill.name}</SectionHeading>
+          <SectionContent>
+            <List>
+              {skill.items.map(item => <ListItem key={item}>{item}</ListItem>)}
+            </List>
+          </SectionContent>
+        </Section>
+      ))}
     </ContentWrapper>
   );
 };
