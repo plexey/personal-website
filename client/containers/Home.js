@@ -26,7 +26,6 @@ const Portrait = styled.img`
   border-color: hsl(0, 0%, 20%);
   border-width: 3px;
   margin: 20px 0 0 0;
-  /* box-shadow: 0 0 20px 0 black; */
 `;
 
 const Heading = styled.h2`
