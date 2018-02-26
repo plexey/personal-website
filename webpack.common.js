@@ -27,7 +27,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Production",
       template: "./client/index.html",
-      filename: "index.html",
+      filename: "200.html",
       inject: "body",
       favicon: "client/favicon.ico"
     })
