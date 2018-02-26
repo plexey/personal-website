@@ -88,8 +88,8 @@ export default class Header extends React.Component {
         <HeaderContent>
           <Heading>Tom Trinca</Heading>
           <NavLinks>
-            <NavLink exact to={routes.HOME}>
-              Home
+            <NavLink exact to={routes.ABOUT}>
+              About
             </NavLink>
             <NavLink to={routes.PROJECTS}>
               Projects
