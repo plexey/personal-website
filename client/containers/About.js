@@ -43,7 +43,7 @@ const Subheading = styled.h3`
   text-align: center;
 `;
 
-const Home = () => {
+const About = () => {
   return (
     <ContentWrapper>
       <Heading>Tom Trinca - Web Developer & Designer</Heading>
@@ -73,4 +73,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default About;
