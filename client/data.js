@@ -1,28 +1,37 @@
 export const about = {
-  description: `Hi, I'm Tom. I am a Web Developer based in Melbourne, Australia. 
-  I build everything, from small web components to
-  large scale interactive apps. I have a varied background with a
-  Diploma of Website Development, a Bachelor’s degree in General Arts
-  & Visual Arts and a Masters degree in Arts Management (with
-  Distinction). These qualifications have provided me with diverse
-  skill set including but not limited to programming, design and
-  project management. Check out my recent work in the Projects section.`,
+  image: "https://i.imgur.com/zGYLktc.png",
+  description: `Hi, I'm Tom. I am a Front-end Developer and graduate of Website Development. I build everything, from small web components to large scale interactive applications. Check out my skills and development tools below or view some of my recent work in the Projects section.`,
   skills: [
     {
-      name: "Languages",
+      heading: "Languages",
+      subheading: "I am proficient in the following languages",
       items: ["JavaScript", "Java", "C#", "HTML", "CSS", "SQL"]
     },
-    { name: "Frameworks", items: ["React", ".NET MVC"] },
-    { name: "State Management", items: ["Redux", "Mobx"] },
-    { name: "Databasing", items: ["SQL", "Firebase", "mongoDB"] },
     {
-      name: "Dev Tools",
+      heading: "Frameworks",
+      subheading: "Web frameworks I've used",
+      items: ["React", "Vue.js", ".NET MVC"]
+    },
+    {
+      heading: "State Management",
+      subheading:
+        "I've extensive experience with the following state management utilities",
+      items: ["Redux", "Mobx"]
+    },
+    {
+      heading: "Databasing",
+      subheading: "Database types and technologies I've used",
+      items: ["SQL", "Firebase", "mongoDB"]
+    },
+    {
+      heading: "Dev Tools",
+      subheading: "Tools and utilities I use in my development environment",
       items: [
         "Node JS",
-        "Webpack",
+        "NPM",
         "Git",
         "Github",
-        "MySQL",
+        "Webpack",
         "Jest",
         "Travis CI",
         "Husky",
@@ -316,8 +325,8 @@ export const projects = {
     description:
       "This website functions as a portfolio of my recent web development projects. It features a simple UI built with contemporary web technologies in order to produce a consistent and fast user experience across different screen sizes and platforms.",
     images: [
-      { original: "https://i.imgur.com/XVLTKAS.png" },
-      { original: "https://i.imgur.com/tBng7lG.png" }
+      { original: "https://i.imgur.com/tBng7lG.png" },
+      { original: "https://i.imgur.com/XVLTKAS.png" }
     ],
     technologies: [
       {
