@@ -3,9 +3,13 @@ import styled from "styled-components";
 import Paragraph from "../components/Paragraph";
 import ContentWrapper from "../components/ContentWrapper";
 
+const Em = styled.em`
+  font-weight: bold;
+`;
+
 const LinksContainer = styled.div`
   width: 100%;
-  margin: 20px 0 0 0;
+  margin: 40px 0 0 0;
   display: flex;
 
   @media screen and (max-width: 1000px) {
@@ -68,9 +72,10 @@ const Contact = () => {
   return (
     <ContentWrapper>
       <Paragraph>
-        If you would like to get in touch regarding a project, to make an enquiry or
-        simply to chat, email me at tptrinca@gmail.com or click the button
-        bellow. Alternatively, find me via the social media links below.
+        If you would like to get in touch regarding a project, to make an
+        enquiry or simply to chat, email me at <Em>tptrinca@gmail.com</Em> or
+        click the button bellow. Alternatively, find me via the social media
+        links below.
       </Paragraph>
       <LinksContainer>
         <Link
