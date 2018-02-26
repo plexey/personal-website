@@ -15,7 +15,7 @@ export const about = {
     {
       heading: "State Management",
       subheading:
-        "I've extensive experience with the following state management utilities",
+        "State Management tools I've used",
       items: ["Redux", "Mobx"]
     },
     {
