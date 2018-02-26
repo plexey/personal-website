@@ -133,8 +133,8 @@ const ContentHeader = () => (
       path="/"
       render={() => (
         <Content>
-          <Heading>Home</Heading>
-          <Subheading>Who am I?</Subheading>
+          <Heading>About</Heading>
+          <Subheading>Some information about me</Subheading>
         </Content>
       )}
     />
