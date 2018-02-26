@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
+import * as routes from "../constants/routes";
 import About from "./About";
 import Projects from "./Projects";
 import Project from "./Project";
@@ -33,10 +34,10 @@ class Content extends Component {
   render() {
     return (
       <Wrapper>
-        <Route exact path="/" component={About} />
-        <Route exact path="/projects" component={Projects} />
-        <Route exact path="/projects/:project" component={Project} />
-        <Route exact path="/contact" component={Contact} />
+        <Route exact path={routes.ABOUT} component={About} />
+        <Route exact path={routes.PROJECTS} component={Projects} />
+        <Route exact path={routes.PROJECT} component={Project} />
+        <Route exact path={routes.CONTACT} component={Contact} />
       </Wrapper>
     );
   }
