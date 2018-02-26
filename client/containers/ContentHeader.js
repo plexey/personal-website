@@ -95,6 +95,7 @@ const Link = styled.a`
   text-decoration: none;
   font-weight: bold;
   transition: 200ms ease all;
+  cursor: pointer;
 
   ${Link}:hover {
     transform: scale(1.05, 1.05);
@@ -109,17 +110,15 @@ const Link = styled.a`
 `;
 
 const ProjectContentHeader = props => {
-  const projData = projects[props.match.params.project];
-  const linkNames = Object.keys(projData.links);
-  const linkPaths = Object.values(projData.links);
+  const project = projects[props.match.params.project];
   return (
     <Content>
-      <Heading>{projData.heading}</Heading>
-      <Subheading>{projData.subheading}</Subheading>
+      <Heading>{project.heading}</Heading>
+      <Subheading>{project.subheading}</Subheading>
       <NavLinks>
-        {linkNames.map((item, index) => (
-          <Link key={index} href={linkPaths[index]}>
-            {item}
+        {project.links.map(item => (
+          <Link key={item.name} href={item.link}>
+            {item.name}
           </Link>
         ))}
       </NavLinks>
