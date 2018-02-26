@@ -100,7 +100,7 @@ export default class Header extends React.Component {
           </NavLinks>
           <ExternalLinks>
             <ExternalLink href="https://github.com/plexey">
-              <i className="fab fa-github-alt" />
+            <i className="fab fa-github"></i>
             </ExternalLink>
             <ExternalLink href="https://codepen.io/Trinca/pens/popular/">
               <i className="fab fa-codepen" />
