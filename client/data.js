@@ -1,6 +1,6 @@
 export const about = {
-  description: `I am a Web Developer based in Melbourne, Australia. I enjoy
-  designing and building everything, from small web components to
+  description: `Hi, I'm Tom. I am a Web Developer based in Melbourne, Australia. 
+  I build everything, from small web components to
   large scale interactive apps. I have a varied background with a
   Diploma of Website Development, a Bachelor’s degree in General Arts
   & Visual Arts and a Masters degree in Arts Management (with
@@ -140,10 +140,10 @@ export const projects = {
         link: "https://travis-ci.org/"
       }
     ],
-    links: {
-      github: "https://github.com/plexey/palette-town",
-      demo: "http://palettetown.surge.sh/"
-    },
+    links: [
+      { name: "github", link: "https://github.com/plexey/palette-town" },
+      { name: "view live", link: "http://palettetown.surge.sh/" }
+    ],
     resources: [
       {
         name: "This project is online at ",
@@ -178,11 +178,14 @@ export const projects = {
       { original: "https://i.imgur.com/o4cFNqy.png", thumbnail: "" },
       { original: "https://i.imgur.com/AVLO0Hc.png", thumbnail: "" }
     ],
-    links: {
-      github: "https://github.com/plexey/react-depth-of-field",
-      npm: "https://www.npmjs.com/package/react-depth-of-field",
-      demo: "http://react-depth-of-field.surge.sh/"
-    },
+    links: [
+      { name: "github", link: "https://react-depth-of-field" },
+      {
+        name: "npm",
+        link: "https://www.npmjs.com/package/react-depth-of-field"
+      },
+      { name: "view demo", link: "http://react-depth-of-field.surge.sh/" }
+    ],
     technologies: [
       {
         name: "react",
@@ -232,6 +235,7 @@ export const projects = {
     ],
     tags: ["javascript", "react", "husky", "travis ci"]
   },
+
   reactreduxtodo: {
     name: "reactreduxtodo",
     heading: "React Redux Todo",
@@ -284,10 +288,11 @@ export const projects = {
         link: "https://travis-ci.org/"
       }
     ],
-    links: {
-      github: "https://github.com/plexey/react-redux-todo",
-      demo: "http://reactreduxtodo.surge.sh/"
-    },
+
+    links: [
+      { name: "github", link: "https://github.com/plexey/react-redux-todo" },
+      { name: "view demo", link: "http://reactreduxtodo.surge.sh/" }
+    ],
     resources: [
       {
         name: "This project is online at ",
@@ -302,6 +307,7 @@ export const projects = {
     ],
     tags: ["javascript", "react", "redux"]
   },
+
   personalwebsite: {
     name: "personalwebsite",
     heading: "Personal Website",
@@ -354,9 +360,9 @@ export const projects = {
         link: "https://fontawesome.com/"
       }
     ],
-    links: {
-      github: "https://github.com/plexey/personal-website"
-    },
+    links: [
+      { name: "github", link: "https://github.com/plexey/personal-website" }
+    ],
     resources: [
       {
         name: "View the source code on my ",
@@ -406,9 +412,12 @@ export const projects = {
         link: "https://github.com/styled-components/styled-components"
       }
     ],
-    links: {
-      github: "https://github.com/plexey/firebase-authentication"
-    },
+    links: [
+      {
+        name: "github",
+        link: "https://github.com/plexey/firebase-authentication"
+      }
+    ],
     resources: [
       {
         name: "This project can be viewed on my",
@@ -438,10 +447,10 @@ export const projects = {
         link: "https://reactjs.org/"
       }
     ],
-    links: {
-      github: "https://github.com/plexey/react-stack",
-      demo: "http://react-stack.surge.sh/"
-    },
+    links: [
+      { name: "github", link: "https://github.com/plexey/react-stack" },
+      { name: "live demo", link: "http://react-stack.surge.sh/" }
+    ],
     resources: [
       {
         name: "this project is online at ",
@@ -470,10 +479,10 @@ export const projects = {
         link: "https://reactjs.org/"
       }
     ],
-    links: {
-      github: "https://github.com/plexey/react-unary-clock",
-      codepen: "https://codepen.io/Trinca/pen/YrrGoN"
-    },
+    links: [
+      { name: "github", link: "https://github.com/plexey/react-unary-clock" },
+      { name: "codepen", link: "https://codepen.io/Trinca/pen/YrrGoN" }
+    ],
     resources: [
       {
         name: "See it working at",
