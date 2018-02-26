@@ -5,6 +5,7 @@ import ContentWrapper from "../components/ContentWrapper";
 import Section from "../components/Section";
 import SectionContent from "../components/SectionContent";
 import SectionHeading from "../components/SectionHeading";
+import SectionSubheading from "../components/SectionSubeading";
 import ListItem from "../components/ListItem";
 import { about } from "../data";
 
@@ -18,10 +19,9 @@ const PortraitWrapper = styled.div`
 `;
 
 const Portrait = styled.img`
-  height: 220px;
-  width: 220px;
-  filter: grayscale(100%);
-  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  border-radius: 3px;
   border-style: solid;
   border-color: hsl(0, 0%, 20%);
   border-width: 3px;
@@ -50,7 +50,7 @@ const About = () => {
       <Subheading>Melbourne, Australia</Subheading>
 
       <PortraitWrapper>
-        <Portrait src="https://i.imgur.com/KniM0NPm.jpg" alt="mugshot" />
+        <Portrait src={about.image} alt="mugshot" />
       </PortraitWrapper>
 
       <Section>
@@ -60,8 +60,9 @@ const About = () => {
       </Section>
 
       {about.skills.map((skill, index) => (
-        <Section key={`${index}-${skill.name}`}>
-          <SectionHeading>{skill.name}</SectionHeading>
+        <Section key={`${index}-${skill.heading}`}>
+          <SectionHeading>{skill.heading}</SectionHeading>
+          <SectionSubheading>{skill.subheading}</SectionSubheading>
           <SectionContent>
             <List>
               {skill.items.map(item => <ListItem key={item}>{item}</ListItem>)}
