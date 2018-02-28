@@ -1,43 +1,59 @@
 export const about = {
   image: "https://i.imgur.com/zGYLktc.png",
-  description: `Hi, I'm Tom. I am a Front-end Developer and graduate of Website Development. I build everything, from small web components to large scale interactive applications. Check out my skills and development tools below or view some of my recent work in the Projects section.`,
+  description: `Hi, I'm Tom. I am a Front-end Developer and graduate of Website Development. I enjoy building everything, from small web components to large scale interactive applications. Check out my skills and development tools below or view some of my recent work in the Projects section.`,
+  short_description:
+    "I make everything, from web components to large scale interactive apps",
   skills: [
     {
       heading: "Languages",
       subheading: "I am proficient in the following languages",
-      items: ["JavaScript", "Java", "C#", "HTML", "CSS", "SQL"]
+      items: ["JavaScript", "HTML, CSS", "Java", "C#", "SQL"]
     },
     {
       heading: "Frameworks",
       subheading: "Web frameworks I've used",
-      items: ["React", "Vue.js", ".NET MVC"]
+      items: ["React JS", "Vue.js", ".NET MVC"]
     },
     {
       heading: "State Management",
-      subheading:
-        "State Management tools I've used",
-      items: ["Redux", "Mobx"]
-    },
-    {
-      heading: "Databasing",
-      subheading: "Database types and technologies I've used",
-      items: ["SQL", "Firebase", "mongoDB"]
+      subheading: "State Management tools I've used",
+      items: [
+        {
+          name: "Redux",
+          info: "predictable state container for JavaScript apps"
+        },
+        { name: "Mobx", info: "Simple, scalable state managment" }
+      ]
     },
     {
       heading: "Dev Tools",
       subheading: "Tools and utilities I use in my development environment",
       items: [
-        "Node JS",
-        "NPM",
-        "Git",
-        "Github",
-        "Webpack",
-        "Jest",
-        "Travis CI",
-        "Husky",
-        "Semantic Release",
-        "VS Code",
-        "Atom Editor"
+        { name: "Node JS", info: "JavaScript run-time environment" },
+        { name: "NPM", info: "default package manager for Node JS " },
+        { name: "Git", info: "distributed version control system" },
+        {
+          name: "Github",
+          info: "web-based hosting service for version control using git"
+        },
+        { name: "Webpack", info: "open-source JavaScript module bundler" },
+        { name: "Jest", info: "JavaScript code testing" },
+        {
+          name: "Travis CI",
+          info:
+            "distributed continuous integration service used to build and test software projects hosted on Github"
+        },
+        { name: "Husky", info: "git hooks made easy" },
+        {
+          name: "Semantic Release",
+          info: "automates version management and package publishing"
+        },
+        { name: "VS Code", info: "source code editor" },
+        { name: "Atom Editor", info: "source code editor" },
+        {
+          name: "Microsoft SQL Server",
+          info: "relational database management system"
+        }
       ]
     }
   ]
@@ -74,15 +90,16 @@ export const projects = {
     heading: "Palette Town",
     subheading:
       "A sophisticated color palette generation utility for designers & developers",
-    description: `Palette Town is a tool for creating and refining unique color palettes for your website or other project. With it, you can generate triadic, tetradic, square, pentagonal color harmonies or alternatively an entirely randomized color palette. 
+    description: `Palette Town is a tool for creating and refining unique color palettes for your website or other project. With it, you can generate triadic, tetradic, square and pentagonal color harmonies or alternatively an entirely randomized color palette. 
     Reorder a generated palette by dragging and dropping its swatches or by clicking the shuffle and reverse buttons. Modify a given swatch's color values within your preferred color space or, alternatively, add and remove swatches at will. 
     With Palette Town you can save and name your palettes to the Favorites section and easily export its hex, rgb, hsl or cmyk color values to your project.`,
     images: [
-      { original: "https://i.imgur.com/3iG9kU9.png" },
+      { original: "https://i.imgur.com/6vwzhim.png" },
       { original: "https://i.imgur.com/KnP4AzG.png" },
       { original: "https://i.imgur.com/134eGjO.png" },
       { original: "https://i.imgur.com/8B91few.png" }
     ],
+    mobileImages: [{ original: "https://i.imgur.com/ey5nO7A.png" }],
     technologies: [
       {
         name: "react",
@@ -132,9 +149,9 @@ export const projects = {
         link: "https://github.com/css-modules/css-modules"
       },
       {
-        name: "font awesome",
-        description: "Popular vector icons and logos library",
-        link: "https://fontawesome.com/"
+        name: "material icons",
+        description: "Icon set adhering to Material Design system",
+        link: "https://material.io/icons/"
       },
       {
         name: "webpack",
@@ -178,10 +195,9 @@ export const projects = {
     name: "reactdepthoffield",
     heading: "React Depth of Field",
     subheading:
-      "A React module for applying a dynamic, animated depth of field effect to a set of elements",
-    description: `This module is a React component designed to apply an adjustable, animatable depth of field effect to a set of provided children. Amongst other props, it takes a set of children and a designated focus point. The focus point is the index of the child element to be in focus. 
-      From the designed focus point, the module applies a depth of field effect to its children centered on a given child by programmatically applying CSS blur filters of increasing strengths to each of its children above and below the focus point. 
-      Changing the focus point to a different child index will initiate an animated transition from the original index to the new index, simulating a camera focus pull. The module also accepts a provided blur increment as well as an animation time prop. The former controls the strength of depth of field effect while the latter controls the time it takes for the focus point to transition from one child to an adjacent child.`,
+      "A React module for applying an adjustable depth of field effect to a set of elements",
+    description: `This module is a React component and the product of a personal mission to simulate an optical depth of field in the browser. The depth of field effect is generated by applying individual CSS blur filters of steadily increasing strength to every element above and below a given element. 
+    Among other features, the primary feature of React Depth of Field is focus pulling. That is, it simulates the effect of adjusting a camera lens focal point from one object to another across intermediate objects such that each intermediate object is temporarily in focus. The speed of this transition as well as the intensity of the depth of field can all be fine tuned as you see fit.`,
     images: [
       { original: "https://i.imgur.com/CzyYmg4.png", thumbnail: "" },
       { original: "https://i.imgur.com/o4cFNqy.png", thumbnail: "" },
@@ -347,9 +363,9 @@ export const projects = {
         link: "https://github.com/styled-components/styled-components"
       },
       {
-        name: "firebase",
-        description: "a mobile and web application development platform ",
-        link: "https://firebase.google.com/"
+        name: "surge",
+        description: "static web publishing for front-end developers",
+        link: "https://surge.sh/"
       },
       {
         name: "webpack",
@@ -379,7 +395,7 @@ export const projects = {
         link: "https://github.com/plexey/personal-website"
       }
     ],
-    tags: ["javascript", "react", "css in js", "firebase"]
+    tags: ["javascript", "react", "css in js", "react router"]
   },
 
   firebaseauthentication: {
@@ -434,7 +450,7 @@ export const projects = {
         link: "https://github.com/plexey/firebase-authentication"
       }
     ],
-    tags: ["firebase", "react", "redux", "css in js"]
+    tags: ["firebase", "react", "react router", "redux", "css in js"]
   },
 
   reactstack: {
