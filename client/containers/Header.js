@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Heading from "../components/Heading";
-import NavLink from "../components/NavLink";
+import StyledNavLink from "../components/StyledNavLink";
+import { NavLink } from "react-router-dom";
 import * as routes from "../constants/routes";
 
 const HeaderContainer = styled.header`
@@ -86,21 +87,24 @@ export default class Header extends React.Component {
     return (
       <HeaderContainer>
         <HeaderContent>
-          <Heading>Tom Trinca</Heading>
+          <NavLink exact to={routes.HOME}>
+            <Heading>Tom Trinca</Heading>
+          </NavLink>
           <NavLinks>
-            <NavLink exact to={routes.ABOUT}>
+            <StyledNavLink exact to={routes.HOME}>
+              Home
+            </StyledNavLink>
+            <StyledNavLink exact to={routes.ABOUT}>
               About
-            </NavLink>
-            <NavLink to={routes.PROJECTS}>
-              Projects
-            </NavLink>
-            <NavLink exact to={routes.CONTACT}>
+            </StyledNavLink>
+            <StyledNavLink to={routes.PROJECTS}>Projects</StyledNavLink>
+            <StyledNavLink exact to={routes.CONTACT}>
               Contact
-            </NavLink>
+            </StyledNavLink>
           </NavLinks>
           <ExternalLinks>
             <ExternalLink href="https://github.com/plexey">
-            <i className="fab fa-github"></i>
+              <i className="fab fa-github" />
             </ExternalLink>
             <ExternalLink href="https://codepen.io/Trinca/pens/popular/">
               <i className="fab fa-codepen" />
