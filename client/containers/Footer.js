@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const FooterContainer = styled.footer`
   display: grid;
-  grid-row-start: main4;
-  grid-row-end: main5;
+  grid-row-start: main3;
+  grid-row-end: main4;
   /* Define internal grid columns */
   grid-template-columns: ${props => props.theme.deskGridTempCol};
   background: hsl(0, 0%, 30%);
