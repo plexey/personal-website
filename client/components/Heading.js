@@ -12,6 +12,7 @@ const Heading = styled.h1`
     @media screen and (max-width: 1300px) {
     ${Heading} {
       font-size: 17px;
+      padding: 0 15px 0 0;
     }
   }
 `;
