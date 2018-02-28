@@ -2,16 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Route } from "react-router-dom";
+import * as routes from "../constants/routes";
 import { projects } from "../data";
 
 const Wrapper = styled.div`
   display: grid;
-  grid-row-start: main2;
-  grid-row-end: main3;
+  grid-column-start: cline-1;
+  grid-column-end: cline-4;
   /* Define internal grid  columns */
   grid-template-columns: ${props => props.theme.deskGridTempCol};
   background: hsl(0, 0%, 20%);
   font-family: ${props => props.theme.font};
+  max-height: 200px;
+  min-height: 200px;
 
   @media screen and (max-width: 1300px) {
     ${Wrapper} {
@@ -112,57 +115,80 @@ const Link = styled.a`
 const ProjectContentHeader = props => {
   const project = projects[props.match.params.project];
   return (
-    <Content>
-      <Heading>{project.heading}</Heading>
-      <Subheading>{project.subheading}</Subheading>
-      <NavLinks>
-        {project.links.map(item => (
-          <Link key={item.name} href={item.link}>
-            {item.name}
-          </Link>
-        ))}
-      </NavLinks>
-    </Content>
+    <Wrapper>
+      <Content>
+        <Heading>{project.heading}</Heading>
+        <Subheading>{project.subheading}</Subheading>
+        <NavLinks>
+          {project.links.map(item => (
+            <Link key={item.name} href={item.link}>
+              {item.name}
+            </Link>
+          ))}
+        </NavLinks>
+      </Content>
+    </Wrapper>
   );
 };
 
 const ContentHeader = () => (
-  <Wrapper>
-    <Route
+  <React.Fragment>
+    {/* <Route
       exact
-      path="/"
+      path={routes.HOME}
       render={() => (
         <Content>
-          <Heading>About</Heading>
-          <Subheading>Some information about me</Subheading>
+          <Heading>Home</Heading>
+          <Subheading>
+            Hello and welcome to my website 
+          </Subheading>
         </Content>
       )}
-    />
+    /> */}
+
+    {/* <Route
+      exact
+      path={routes.ABOUT}
+      render={() => (
+        <Wrapper>
+          <Content>
+            <Heading>About Me</Heading>
+            <Subheading>Some information about me</Subheading>
+          </Content>
+        </Wrapper>
+      )}
+    /> */}
 
     <Route
       exact
-      path="/projects"
+      path={routes.PROJECTS}
       render={() => (
-        <Content>
-          <Heading>Projects</Heading>
-          <Subheading>Check out my latest web development projects</Subheading>
-        </Content>
+        <Wrapper>
+          <Content>
+            <Heading>My Projects</Heading>
+            <Subheading>
+              Check out my latest web development projects
+            </Subheading>
+          </Content>
+        </Wrapper>
       )}
     />
 
-    <Route exact path="/projects/:project" component={ProjectContentHeader} />
+    <Route exact path={routes.PROJECT} component={ProjectContentHeader} />
 
     <Route
       exact
-      path="/contact"
+      path={routes.CONTACT}
       render={() => (
-        <Content>
-          <Heading>Contact</Heading>
-          <Subheading>Get in touch :)</Subheading>
-        </Content>
+        <Wrapper>
+          <Content>
+            <Heading>Contact Me</Heading>
+            <Subheading>My contact information</Subheading>
+          </Content>
+        </Wrapper>
       )}
     />
-  </Wrapper>
+  </React.Fragment>
 );
 
 ProjectContentHeader.propTypes = {
