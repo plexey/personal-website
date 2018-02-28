@@ -42,6 +42,11 @@ const Image = styled.img`
   }
 `;
 
+const ListItemDescription = styled.em`
+  color: hsl(0, 0%, 40%);
+  line-height: 25px;
+`;
+
 class Project extends React.Component {
   render() {
     const { match } = this.props;
@@ -110,7 +115,9 @@ class Project extends React.Component {
                 {data.technologies.map((item, index) => (
                   <ListItem key={item.name + "-" + index}>
                     <Link href={item.link}>{item.name}</Link> -{" "}
-                    {item.description}
+                    <ListItemDescription>
+                      {item.description}
+                    </ListItemDescription>
                   </ListItem>
                 ))}
               </List>
