@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Paragraph = styled.p`
   font-size: 20px;
   margin: 0 0 10px 0;
+  line-height: 25px;
 
   @media screen and (max-width: 1000px) {
     ${Paragraph} {
