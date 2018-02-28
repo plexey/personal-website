@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const activeClassName = "active-link";
 
-const Link = styled(NavLink).attrs({
+const StyledNavLink = styled(NavLink).attrs({
   activeClassName
 })`
   display: flex;
@@ -23,16 +23,17 @@ const Link = styled(NavLink).attrs({
     background: hsl(0, 0%, 20%);
   }
 
-  ${Link}:hover {
+  ${StyledNavLink}:hover {
     color: ${props => props.theme.brandColor};
     background: hsl(0, 0%, 20%);
   }
 
   @media screen and (max-width: 1300px) {
-    ${Link} {
+    ${StyledNavLink} {
       font-size: 14px;
+      padding: 0 8px 0 8px;
     }
   }
 `;
 
-export default Link;
+export default StyledNavLink;
