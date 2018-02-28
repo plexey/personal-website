@@ -3,7 +3,9 @@ import styled from "styled-components";
 import Paragraph from "../components/Paragraph";
 import ContentWrapper from "../components/ContentWrapper";
 
-const Em = styled.em`
+const Email = styled.a`
+  color: blue;
+  text-decoration: none;
   font-weight: bold;
 `;
 
@@ -72,20 +74,14 @@ const Contact = () => {
   return (
     <ContentWrapper>
       <Paragraph>
-        If you would like to get in touch regarding a project, to make an
-        enquiry or simply to chat, email me at <Em>tptrinca@gmail.com</Em> or
-        click the button bellow. Alternatively, find me via the social media
-        links below.
+        If you would like to contact me regarding a project or to make a general
+        enquiry, then please email me at{" "}
+        <Email href="mailto:tptrinca@gmail.com">tptrinca@gmail.com</Email>
+      </Paragraph>
+      <Paragraph>
+        Alternatively, you can find me on social media via the links below.
       </Paragraph>
       <LinksContainer>
-        <Link
-          textColor={`hsl(0, 0%, 90%)`}
-          primary={`#E55757`}
-          secondary={`#C33232`}
-          href="mailto:tptrinca@gmail.com"
-        >
-          <i className="fas fa-envelope" /> <LinkName>Email Me</LinkName>
-        </Link>
         <Link
           textColor={`hsl(0, 0%, 90%)`}
           primary={`#505050`}
