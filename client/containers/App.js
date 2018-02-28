@@ -2,7 +2,6 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import baseStyles from "../baseStyles";
 import Header from "./Header";
-import ContentHeader from "./ContentHeader";
 import Content from "./Content";
 import Footer from "./Footer";
 
@@ -21,10 +20,10 @@ const theme = {
 const Main = styled.div`
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: [main1] 60px [main2] 190px [main3] auto [main4] 80px [main5];
+  grid-template-rows: [main1] 60px [main2] auto [main3] 80px [main4];
 
   @media screen and (max-width: 1000px) {
-    grid-template-rows: [main1] 50px [main2] 130px [main3] auto [main4] 60px [main5];
+    grid-template-rows: [main1] 50px [main2] auto [main3] 60px [main4];
   }
 `;
 
@@ -35,7 +34,6 @@ export default class App extends React.Component {
       <ThemeProvider theme={theme}>
         <Main>
           <Header />
-          <ContentHeader />
           <Content />
           <Footer />
         </Main>
